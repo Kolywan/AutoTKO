@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <parameter name="password" value="param-val-not-found"/>
+  <parameter name="admin" value="param-val-not-found"/>
+  <parameter name="admin_password" value="param-val-not-found"/>
+  <parameter name="user" value="param-val-not-found"/>
+  <test thread-count="5" name="Default test(failed)">
+    <classes>
+      <class name="com.tests.smoke.Smoke1">
+        <methods>
+          <include name="cleanUp"/>
+          <include name="result"/>
+          <include name="startVideo"/>
+          <include name="smoke3"/>
+          <include name="setUp"/>
+          <include name="smoke2"/>
+          <include name="smoke1"/>
+          <include name="smoke6"/>
+          <include name="smoke5"/>
+          <include name="smoke4"/>
+          <include name="smoke9"/>
+          <include name="smoke8"/>
+          <include name="tearDown"/>
+          <include name="smoke7"/>
+        </methods>
+      </class> <!-- com.tests.smoke.Smoke1 -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

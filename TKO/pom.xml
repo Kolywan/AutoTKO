@@ -1,0 +1,157 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>Supply</groupId>
+	<artifactId>Supply</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>Selenide Supply</name>
+	
+	<repositories>
+	<repository>
+    <id>jenkins-releases</id>
+    <url>http://repo.jenkins-ci.org/releases/</url>
+  </repository>
+  
+  
+  
+  <repository>
+    <id>com.teamdev</id>
+    <url>http://maven.teamdev.com/repository/products</url>
+</repository>
+  
+  
+</repositories>
+
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	
+		<testng.version>6.9.10</testng.version>
+	</properties>
+	<dependencies>
+
+
+
+
+<dependency>
+    <groupId>com.teamdev.jxbrowser</groupId>
+    <artifactId>jxbrowser-win64</artifactId>
+    <version>6.22</version>
+</dependency>
+
+
+
+
+
+
+
+<!-- https://mvnrepository.com/artifact/com.codeborne/selenide -->
+<dependency>
+    <groupId>com.codeborne</groupId>
+    <artifactId>selenide</artifactId>
+    <version>5.1.0</version>
+</dependency>
+
+	
+	
+	<!-- https://mvnrepository.com/artifact/ru.sbtqa/monte-media -->
+<dependency>
+    <groupId>ru.sbtqa</groupId>
+    <artifactId>monte-media</artifactId>
+    <version>1.0.1</version>
+</dependency>
+	
+
+
+	
+	
+	
+	
+	<!-- https://mvnrepository.com/artifact/uk.co.caprica/vlcj -->
+<dependency>
+    <groupId>uk.co.caprica</groupId>
+    <artifactId>vlcj</artifactId>
+    <version>3.10.1</version>
+</dependency>
+	
+	
+	
+	
+		<!-- testng -->
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>${testng.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
+		<dependency>
+			<groupId>com.googlecode.json-simple</groupId>
+			<artifactId>json-simple</artifactId>
+			<version>1.1</version>
+		</dependency>
+		
+		
+		<dependency>
+  <groupId>com.squareup.okhttp3</groupId>
+  <artifactId>okhttp</artifactId>
+  <version>3.7.0</version>
+</dependency>
+
+
+
+
+
+		
+		
+		
+		
+		
+	<!-- https://mvnrepository.com/artifact/javax.mail/mail -->	
+<dependency>
+    <groupId>javax.mail</groupId>
+    <artifactId>mail</artifactId>
+    <version>1.5.0-b01</version>
+</dependency>
+	
+	
+		
+		<dependency>
+    <groupId>javax.activation</groupId>
+    <artifactId>activation</artifactId>
+    <version>1.1.1</version>
+</dependency>
+		
+		
+		
+		
+		
+	</dependencies>
+	
+	
+	
+	
+	
+	
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.16</version>
+				<configuration>
+					<suiteXmlFiles>
+						<suiteXmlFile>testng.xml</suiteXmlFile>
+					</suiteXmlFiles>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+
+	<description>Supply system </description>
+</project>

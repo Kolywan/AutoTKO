@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Convert local variable &apos;com.pages.MainPage.validTextBox().equals&apos; in &apos;com.pages.MainPage.validTextBox()&apos; to field&#x0D;&#x0A;- Original project: &apos;Uremont&apos;&#x0D;&#x0A;- Original element: &apos;com.pages.MainPage.validTextBox().equals&apos;&#x0D;&#x0A;- Field name: &apos;equals&apos;&#x0D;&#x0A;- Initialize field in method&#x0D;&#x0A;- Declared visibility: &apos;private&apos;" description="Convert local variable &apos;equals&apos; to field" final="false" flags="2" id="org.eclipse.jdt.ui.promote.temp" initialize="1" input="/src\/test\/java&lt;com.pages{MainPage.java" name="equals" selection="3952 59" stamp="1556616243256" static="false" version="1.0" visibility="2"/>
+</session>

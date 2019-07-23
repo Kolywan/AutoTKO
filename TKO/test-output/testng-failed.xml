@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" guice-stage="DEVELOPMENT" name="Failed suite [SMOKE TESTS TKO]">
+  <parameter name="browser" value="chrome"/>
+  <parameter name="platform" value="test"/>
+  <test thread-count="1" name="SMOKE TESTS(failed)">
+    <parameter name="password" value="pass"/>
+    <parameter name="admin" value="admin"/>
+    <parameter name="admin_password" value="password"/>
+    <parameter name="user" value="login"/>
+    <parameter name="url" value="http://tko-qa.groupstp.ru/app/#!/"/>
+    <classes>
+      <class name="com.tests.smoke.Smoke_tko_13">
+        <methods>
+          <include name="cleanUp"/>
+          <include name="smoke1"/>
+          <include name="result"/>
+          <include name="startVideo"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.tests.smoke.Smoke_tko_13 -->
+    </classes>
+  </test> <!-- SMOKE TESTS(failed) -->
+</suite> <!-- Failed suite [SMOKE TESTS TKO] -->

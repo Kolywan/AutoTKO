@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
+  <reporter-output>
+    <line>
+      <![CDATA[</b><details><summary>Click to see last screen...</summary> <br></b>]]>
+    </line>
+    <line>
+      <![CDATA[Открыть http://tko-qa.groupstp.ru/app/#!/ <br>]]>
+    </line>
+    <line>
+      <![CDATA[</details></b>]]>
+    </line>
+    <line>
+      <![CDATA[<a href=..\videos\smoke1.WMV download="filename">Download video</a>]]>
+    </line>
+    <line>
+      <![CDATA[<br><b><div align="left" style=" height:30px; width:250px; padding: 10px; border: 2px solid gray; margin: 0; background-color:#ff2500;">Class - Smoke_tko_13  TEST - smoke1 Fail! chrome</div></b>]]>
+    </line>
+    <line>
+      <![CDATA[</b><details><summary>Show steps..</summary> <br>]]>
+    </line>
+  </reporter-output>
+  <suite name="SMOKE TESTS TKO" duration-ms="48974" started-at="2019-07-23T10:28:58Z" finished-at="2019-07-23T10:29:47Z">
+    <groups>
+      <group name="smoke">
+        <method signature="Smoke_tko_13.smoke1()[pri:1, instance:[Smoke_tko_13 passed=0 failed=0 skipped=0]]" name="smoke1" class="com.tests.smoke.Smoke_tko_13"/>
+      </group> <!-- smoke -->
+    </groups>
+    <test name="SMOKE TESTS" duration-ms="48974" started-at="2019-07-23T10:28:58Z" finished-at="2019-07-23T10:29:47Z">
+      <class name="com.tests.smoke.Smoke_tko_13">
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:[Smoke_tko_13 passed=0 failed=0 skipped=0]]" name="cleanUp" is-config="true" duration-ms="10" started-at="2019-07-23T10:28:58Z" finished-at="2019-07-23T10:28:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUp -->
+        <test-method status="PASS" signature="setUp(java.lang.String, java.lang.String)[pri:0, instance:[Smoke_tko_13 passed=0 failed=0 skipped=0]]" name="setUp" is-config="true" duration-ms="6096" started-at="2019-07-23T10:28:58Z" finished-at="2019-07-23T10:29:04Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[http://tko-qa.groupstp.ru/app/#!/]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[test]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="startVideo(org.testng.ITestResult, java.lang.String, java.lang.String)[pri:0, instance:[Smoke_tko_13 passed=0 failed=0 skipped=0]]" name="startVideo" is-config="true" duration-ms="858" started-at="2019-07-23T10:29:04Z" finished-at="2019-07-23T10:29:05Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=smoke1 on [Smoke_tko_13 passed=0 failed=0 skipped=0] status=FAILURE method=Smoke_tko_13.smoke1()[pri:1, instance:[Smoke_tko_13 passed=0 failed=0 skipped=0]] output=</details></b>]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[http://tko-qa.groupstp.ru/app/#!/]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[</b><details><summary>Click to see last screen...</summary> <br></b>]]>
+            </line>
+            <line>
+              <![CDATA[Открыть http://tko-qa.groupstp.ru/app/#!/ <br>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- startVideo -->
+        <test-method status="FAIL" signature="smoke1()[pri:1, instance:[Smoke_tko_13 passed=0 failed=0 skipped=0]]" name="smoke1" duration-ms="41326" started-at="2019-07-23T10:29:05Z" finished-at="2019-07-23T10:29:46Z">
+          <exception class="com.codeborne.selenide.ex.ElementNotFound">
+            <message>
+              <![CDATA[Element not found {By.xpath: //div[@class='v-button v-widget icon v-button-icon c-primary-action v-button-c-primary-action']}
+Expected: visible]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[Element not found {By.xpath: //div[@class='v-button v-widget icon v-button-icon c-primary-action v-button-c-primary-action']}
+Expected: visible
+Screenshot: file:/D:/ТКО/ТКО%2023.07.19/TKO/build/reports/tests/1563877786472.0.png
+Page source: file:/D:/ТКО/ТКО%2023.07.19/TKO/build/reports/tests/1563877786472.0.html
+Timeout: 5 s.
+Caused by: NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='v-button v-widget icon v-button-icon c-primary-action v-button-c-primary-action']"}
+at com.codeborne.selenide.impl.WebElementSource.createElementNotFoundError(WebElementSource.java:37)
+at com.codeborne.selenide.impl.ElementFinder.createElementNotFoundError(ElementFinder.java:100)
+at com.codeborne.selenide.impl.WebElementSource.checkCondition(WebElementSource.java:65)
+at com.codeborne.selenide.commands.Should.should(Should.java:35)
+at com.codeborne.selenide.commands.Should.execute(Should.java:29)
+at com.codeborne.selenide.commands.Should.execute(Should.java:12)
+at com.codeborne.selenide.commands.Commands.execute(Commands.java:144)
+at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:99)
+at com.codeborne.selenide.impl.SelenideElementProxy.invoke(SelenideElementProxy.java:65)
+at com.sun.proxy.$Proxy10.waitUntil(Unknown Source)
+at com.pages.tko_13_ApproveRequest.buttonOkRequest(tko_13_ApproveRequest.java:126)
+at com.pages.tko_13_ApproveRequest.request(tko_13_ApproveRequest.java:269)
+at com.pages.tko_13_ApproveRequest.ApproveRequest(tko_13_ApproveRequest.java:306)
+at com.tests.smoke.Smoke_tko_13.smoke1(Smoke_tko_13.java:18)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='v-button v-widget icon v-button-icon c-primary-action v-button-c-primary-action']"}
+  (Session info: chrome=75.0.3770.142)
+  (Driver info: chromedriver=74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@{#29}),platform=Windows NT 10.0.15063 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-J47TJ88', ip: '192.168.0.105', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_201'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 74.0.3729.6 (255758eccf3d24..., userDataDir: C:\Users\Home\AppData\Local...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:59847}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 75.0.3770.142, webStorageEnabled: true}
+Session ID: 6015222e83aaf57933045a0c8471ae8e
+*** Element info: {Using=xpath, value=//div[@class='v-button v-widget icon v-button-icon c-primary-action v-button-c-primary-action']}
+at sun.reflect.GeneratedConstructorAccessor17.newInstance(Unknown Source)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+at java.lang.reflect.Constructor.newInstance(Unknown Source)
+at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at com.codeborne.selenide.impl.WebElementSelector.findElement(WebElementSelector.java:28)
+at com.codeborne.selenide.impl.ElementFinder.getWebElement(ElementFinder.java:74)
+at com.codeborne.selenide.impl.WebElementSource.checkCondition(WebElementSource.java:50)
+... 36 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.codeborne.selenide.ex.ElementNotFound -->
+          <reporter-output>
+            <line>
+              <![CDATA[</details></b>]]>
+            </line>
+            <line>
+              <![CDATA[<a href=..\videos\smoke1.WMV download="filename">Download video</a>]]>
+            </line>
+            <line>
+              <![CDATA[<br><b><div align="left" style=" height:30px; width:250px; padding: 10px; border: 2px solid gray; margin: 0; background-color:#ff2500;">Class - Smoke_tko_13  TEST - smoke1 Fail! chrome</div></b>]]>
+            </line>
+            <line>
+              <![CDATA[</b><details><summary>Show steps..</summary> <br>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- smoke1 -->
+        <test-method status="PASS" signature="result(org.testng.ITestResult, java.lang.String)[pri:0, instance:[Smoke_tko_13 passed=0 failed=0 skipped=0]]" name="result" is-config="true" duration-ms="83" started-at="2019-07-23T10:29:46Z" finished-at="2019-07-23T10:29:47Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=smoke1 on [Smoke_tko_13 passed=0 failed=0 skipped=0] status=FAILURE method=Smoke_tko_13.smoke1()[pri:1, instance:[Smoke_tko_13 passed=0 failed=0 skipped=0]] output=</details></b>]]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- result -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:[Smoke_tko_13 passed=0 failed=0 skipped=0]]" name="tearDown" is-config="true" duration-ms="594" started-at="2019-07-23T10:29:47Z" finished-at="2019-07-23T10:29:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.tests.smoke.Smoke_tko_13 -->
+    </test> <!-- SMOKE TESTS -->
+  </suite> <!-- SMOKE TESTS TKO -->
+</testng-results>

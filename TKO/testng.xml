@@ -1,0 +1,36 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+
+<suite name="SMOKE TESTS TKO" verbose="1" thread-count="1">
+
+	<parameter name="browser" value="chrome" />
+	<parameter name="platform" value="test" />
+
+	<test name="SMOKE TESTS">
+		<!-- Admin -->
+		<parameter name="admin" value="admin" />
+		<parameter name="admin_password" value="password" />
+
+		<!-- Users -->
+		<parameter name="user" value="login" />
+		<parameter name="password" value="pass" />
+
+			<!-- Gmail users -->
+		<parameter name="user" value="login" />
+		<parameter name="password" value="pass" />
+		
+		<!-- QA stend -->
+	<parameter name="url" value="http://tko-qa.groupstp.ru/app/#!/" />
+
+
+		<classes>
+
+
+	<class name="com.tests.smoke.Smoke_tko_13" />
+
+</classes>
+	</test>
+</suite> 
+
+
+	
