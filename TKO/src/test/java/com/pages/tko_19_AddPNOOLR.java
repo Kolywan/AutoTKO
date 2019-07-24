@@ -174,17 +174,17 @@ public class tko_19_AddPNOOLR {
 		sleep(5000);
      }
 	
-	public void startAdmin() {
-
-//Авторизация под администратором
-		login().sendKeys("testadmin");
-		sleep(1000);
-		password().sendKeys("1");
-		sleep(1000);
-		buttonGo().click();
-		sleep(1500);
-
-	}
+//	public void startAdmin() {
+//
+////Авторизация под администратором
+//		login().sendKeys("testadmin");
+//		sleep(1000);
+//		password().sendKeys("1");
+//		sleep(1000);
+//		buttonGo().click();
+//		sleep(1500);
+//
+//	}
 	public void request() {
 
 //Перейти на вкладку "заявки на изменение"
