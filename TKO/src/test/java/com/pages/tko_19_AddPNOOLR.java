@@ -8,6 +8,7 @@ import static com.codeborne.selenide.Selenide.sleep;
 import java.io.File;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 import com.codeborne.selenide.SelenideElement;
@@ -39,26 +40,34 @@ public class tko_19_AddPNOOLR {
 		return $(By.xpath("//table[@class='v-table-table']/tbody/tr")).waitUntil(visible, app.timeOut);
 	}
 
-	public SelenideElement menuProperty() {
-		return $(By.xpath("//div[@class='v-captiontext' and text()='Объекты недвижимости']")).waitUntil(visible, app.timeOut);
+	public SelenideElement menuPNOOLR() {
+		return $(By.xpath("//div[@class='v-captiontext' and text()='ПНООЛР']")).waitUntil(visible, app.timeOut);
 	}
 	
-	public SelenideElement selectProperty() {
-		return $(By.xpath("//tr[@class='v-grid-row v-grid-row-stripe v-grid-row-has-data']/td[6]")).waitUntil(visible, app.timeOut);
+
+	public SelenideElement buttonСreate() {
+		return $(By.xpath("//div[@class='v-button v-widget primary v-button-primary icon v-button-icon c-primary-action v-button-c-primary-action']")).waitUntil(visible, app.timeOut);
 	}
-	public SelenideElement buttonChange() {
-		return $(By.xpath("(//div[@class='v-button v-widget icon v-button-icon'])[3]")).waitUntil(visible, app.timeOut);
+	
+	public SelenideElement textBoxDateTo() {
+		return $(By.xpath("//input[@class='v-textfield v-datefield-textfield c-maskedfield-empty']")).waitUntil(visible, app.timeOut);
+	}
+	public SelenideElement textBoxMassa() {
+		return $(By.xpath("//input[@class='v-textfield v-widget v-has-width c-empty-value']")).waitUntil(visible, app.timeOut);
+	}
+	public SelenideElement buttonEditON() {
+		return $(By.xpath("//span[text()='Редактировать объекты недвижимости']/../..")).waitUntil(visible, app.timeOut);
 	}
 
-	public SelenideElement menuObject() {
-		return $(By.xpath("//div[@class='v-filterselect-button']")).waitUntil(visible, app.timeOut);
-	}
-	public SelenideElement selectObject() {
-		return $(By.xpath("(//td[@class='gwt-MenuItem'])[5]")).waitUntil(visible, app.timeOut);
-	}
 
-	public SelenideElement buttonSend() {
-		return $(By.xpath("(//div[@class='v-button v-widget icon v-button-icon c-primary-action v-button-c-primary-action'])[3]")).waitUntil(visible, app.timeOut);
+	public SelenideElement checkBox() {
+		return $(By.xpath("//span[@class='v-grid-selection-checkbox']/..")).waitUntil(visible, app.timeOut);
+	}
+	public SelenideElement buttonSelect() {
+		return $(By.xpath("//div[@class='v-button v-widget primary v-button-primary']")).waitUntil(visible, app.timeOut);
+	}
+	public SelenideElement buttonOkPNOOLR() {
+		return $(By.xpath("//span[text()='OK']/../..")).waitUntil(visible, app.timeOut);
 	}
 	public SelenideElement menuMyRequest() {
 		return $(By.xpath("//div[@class='v-captiontext' and text()='Мои заявки']")).waitUntil(visible, app.timeOut);
@@ -73,7 +82,7 @@ public class tko_19_AddPNOOLR {
 	}
 
 	public SelenideElement CheckingOfUnits() {
-		return $(By.xpath("//div[text()='Особый случай']")).waitUntil(visible, app.timeOut);
+		return $(By.xpath("//div[text()='ПНООЛР']")).waitUntil(visible, app.timeOut);
 	}
 
 	public SelenideElement selectRequest() {
@@ -128,26 +137,12 @@ public class tko_19_AddPNOOLR {
 //Двойным щелчком мыши заходим в контрагента (Открывается окно "Карточка л/с")
 		agent().doubleClick();
 		sleep(1000);
-//Переходим на вкладку "Объекты недвижимости"
-		menuProperty().click();
+//Переходим на вкладку " ПНООЛР "
+		menuPNOOLR().click();
 		sleep(1000);
-//Выбираем объект недвижимости, который ранее был согласован (Фон заявки окрашен, в белый цвет)
-		selectProperty().click();
+//Кликнуть "Создать"(Открывается окно” Редактор ПНООЛР”)
+		buttonСreate().click();
 		sleep(1000);
-//Кликаем “Изменить сведения” (Всплывает окно "редактор контрагент-объект недвижимости")
-		buttonChange().click();
-		sleep(1000);
-	}
-
-	public void editAgent() {
-//Открываем меню объект недвижимости
-		menuObject().click();
-		sleep(1000);
-//Выбираем объект недвижимости
-		selectObject().click();
-		sleep(1000);
-
-
 	}
 	// Загрузка файла
 	public SelenideElement file() {
@@ -159,11 +154,30 @@ public class tko_19_AddPNOOLR {
 		return locator;
 
 	}
-	public void loadFile() {
+	public void editPNOOLR() {
+//Заполняем поле” Срок действия по”
+		textBoxDateTo().sendKeys("01012020");
+		sleep(1000);
 
-//Кликаем “Отправить на проверку” (Всплывает информация: Запись была отправлена на обработку)
-		buttonSend().click();
-		sleep(1500);
+//Заполняем поле “Вес отходов в год”
+		textBoxMassa().sendKeys("150");
+		textBoxMassa().sendKeys(Keys.ENTER);
+		
+//Загружаем файл
+		file();		
+//Кликнуть "редактировать объекты недвижимости"(Открывается окно "Объекты недвижимости контрагента")
+		buttonEditON().click();
+		sleep(1000);
+//Ставим чек в чекбоксе адреса, который будут покрыты ПНООЛР
+		checkBox().click();
+		sleep(1000);
+//Кликаем “Выбрать” (В окне редактор ПНООЛР появились объекты недвижимости, которые выбрали)
+		buttonSelect().click();
+		sleep(1000);
+//Кликаем ОК (В окне "карточка л/с" на вкладке "ПНООЛР" появилась запись со статусом на проверке)
+		buttonOkPNOOLR().click();
+		sleep(1000);
+
 //Переходим на вкладку "Мои заявки" (Отображаются заявки, отправленные на обработку)
 		menuMyRequest().click();
 //Выбираем заявку, отправленную на обработку
@@ -172,19 +186,19 @@ public class tko_19_AddPNOOLR {
 //Выходим из учетной записи пользователя (Открывается страница авторизации)
 		exit().click();
 		sleep(5000);
-     }
+}
 	
-//	public void startAdmin() {
-//
-////Авторизация под администратором
-//		login().sendKeys("testadmin");
-//		sleep(1000);
-//		password().sendKeys("1");
-//		sleep(1000);
-//		buttonGo().click();
-//		sleep(1500);
-//
-//	}
+	public void startAdmin() {
+
+//Авторизация под администратором
+		login().sendKeys("testadmin");
+		sleep(1000);
+		password().sendKeys("1");
+		sleep(1000);
+		buttonGo().click();
+		sleep(1500);
+
+	}
 	public void request() {
 
 //Перейти на вкладку "заявки на изменение"
@@ -237,15 +251,14 @@ public class tko_19_AddPNOOLR {
 		sleep(6000);
 
 	}
-	public void ChangeInformation() {
+	public void AddPNOOLR() {
 		
-		app.tko_16().startUser();
-		app.tko_16().selectAgent();
-		app.tko_16().editAgent();
-		app.tko_16().loadFile();
-		app.tko_16().startAdmin();
-		app.tko_16().request();
-		app.tko_16().startUser2();
+		app.tko_19().startUser();
+		app.tko_19().selectAgent();
+		app.tko_19().editPNOOLR();
+		app.tko_19().startAdmin();
+		app.tko_19().request();
+		app.tko_19().startUser2();
 		
 		
 

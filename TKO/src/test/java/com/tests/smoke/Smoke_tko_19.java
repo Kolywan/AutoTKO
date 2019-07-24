@@ -15,7 +15,7 @@ public class Smoke_tko_19 extends BaseTest {
 	
 	public void smoke1() throws Exception {
 
-		app.tko_16().ChangeInformation();
+		app.tko_19().AddPNOOLR();
 
 
 	}

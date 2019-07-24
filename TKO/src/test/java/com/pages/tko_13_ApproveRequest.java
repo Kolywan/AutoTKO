@@ -173,7 +173,7 @@ public class tko_13_ApproveRequest {
 
 		
 //Указываем кадастровый номер
-		TextBoxKadasNumber().sendKeys("38:36:000021:27104");
+		TextBoxKadasNumber().sendKeys("38:26:040404:4565");
 		sleep(1000);
 //Кликаем "Найти"(Появляются доп. поля)
 		buttonFind().click();
