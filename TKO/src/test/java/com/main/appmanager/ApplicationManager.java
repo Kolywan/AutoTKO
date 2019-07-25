@@ -27,6 +27,7 @@ import com.pages.tko_14_RejectRequest;
 import com.pages.tko_16_ChangeInformation;
 import com.pages.tko_17_ChangeRent;
 import com.pages.tko_19_AddPNOOLR;
+import com.pages.tko_20_DeleteON;
 import com.pages.tko_21_RejectInformation;
 import com.pages.tko_22_RejectProperty;
 import com.pages.tko_25_UserAndAgentPNOOLR;
@@ -64,6 +65,7 @@ public class ApplicationManager {
 	protected tko_16_ChangeInformation tko_16;
 	protected tko_17_ChangeRent tko_17;
 	protected tko_19_AddPNOOLR tko_19;
+	protected tko_20_DeleteON tko_20;
 	protected tko_21_RejectInformation tko_21;
 	protected tko_22_RejectProperty tko_22;
 	protected tko_25_UserAndAgentPNOOLR tko_25;
@@ -189,6 +191,10 @@ public class ApplicationManager {
 	// ##############################
 	public tko_19_AddPNOOLR tko_19() {
 		return tko_19 = new tko_19_AddPNOOLR();
+	}
+	// ##############################
+		public tko_20_DeleteON tko_20() {
+		return tko_20 = new tko_20_DeleteON();
 	}
 	// ##############################
 	public tko_21_RejectInformation tko_21() {

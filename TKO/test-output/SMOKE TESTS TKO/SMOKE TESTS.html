@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>SMOKE TESTS</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Jul 24 13:42:46 GMT+06:00 2019</td>
+<td>Started on:</td><td>Thu Jul 25 12:14:48 GMT+06:00 2019</td>
 </tr>
-<tr><td>Total time:</td><td>105 seconds (105919 ms)</td>
+<tr><td>Total time:</td><td>68 seconds (68721 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,30 +67,88 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.tests.smoke.Smoke_tko_19.smoke1()'><b>smoke1</b><br>Test class: com.tests.smoke.Smoke_tko_19<br/>
-<a href="#Output-1047477166" onClick='toggleBox("Output-1047477166", this, "Show output", "Hide output");'>Show output</a>
+<td title='com.tests.smoke.Smoke_tko_20.smoke1()'><b>smoke1</b><br>Test class: com.tests.smoke.Smoke_tko_20<br/>
+<a href="#Output-1250644519" onClick='toggleBox("Output-1250644519", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-1047477166" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1047477166">
+<a href="#Output-1250644519" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1250644519">
 </details></b><br/>
 <a href=..\videos\smoke1.WMV download="filename">Download video</a><br/>
-<video width="320" height="240" controls>
-  <source src="..\videos\smoke1.WMV" type="video/wmv">
-</video><br/>
-<br><b><div align="left" style=" height:30px; width:250px; padding: 10px;  border: 2px solid gray; margin: 0; background-color:#19FF3A;">Class - Smoke_tko_19 TEST - smoke1 OK! chrome</div></b><br/>
+<br><b><div align="left" style=" height:30px; width:250px; padding: 10px; border: 2px solid gray; margin: 0; background-color:#ff2500;">Class - Smoke_tko_20  TEST - smoke1 Fail! chrome</div></b><br/>
+</b><details><summary>Show steps..</summary> <br><br/>
 </div>
 </td>
-<td></td>
-<td>98</td>
-<td>[Smoke_tko_19 passed=0 failed=0 skipped=0]</td></tr>
+<td><div><pre>Element should be visible {By.xpath: //div[@class=&apos;v-button v-widget friendly v-button-friendly icon v-button-icon&apos;]}
+Element: &apos;&lt;div class=&quot;v-button v-widget friendly v-button-friendly icon v-button-icon&quot; role=&quot;button&quot; tabindex=&quot;0&quot; displayed:false&gt;&lt;/div&gt;&apos;
+Screenshot: file:/C:/Users/Home/git/AutoTKO/TKO/build/reports/tests/1564035355493.0.png
+Page source: file:/C:/Users/Home/git/AutoTKO/TKO/build/reports/tests/1564035355493.0.html
+Timeout: 5 s.
+	at com.codeborne.selenide.impl.WebElementSource.checkCondition(WebElementSource.java:72)
+	at com.codeborne.selenide.commands.Should.should(Should.java:35)
+	at com.codeborne.selenide.commands.Should.execute(Should.java:29)
+	at com.codeborne.selenide.commands.Should.execute(Should.java:12)
+	at com.codeborne.selenide.commands.Commands.execute(Commands.java:144)
+	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:99)
+	at com.codeborne.selenide.impl.SelenideElementProxy.invoke(SelenideElementProxy.java:65)
+	at com.sun.proxy.$Proxy10.waitUntil(Unknown Source)
+	at com.pages.tko_20_DeleteON.buttonApprove(tko_20_DeleteON.java:83)
+	at com.pages.tko_20_DeleteON.request(tko_20_DeleteON.java:185)
+	at com.pages.tko_20_DeleteON.DeleteON(tko_20_DeleteON.java:231)
+	at com.tests.smoke.Smoke_tko_20.smoke1(Smoke_tko_20.java:18)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1250644519", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1250644519'><pre>Element should be visible {By.xpath: //div[@class=&apos;v-button v-widget friendly v-button-friendly icon v-button-icon&apos;]}
+Element: &apos;&lt;div class=&quot;v-button v-widget friendly v-button-friendly icon v-button-icon&quot; role=&quot;button&quot; tabindex=&quot;0&quot; displayed:false&gt;&lt;/div&gt;&apos;
+Screenshot: file:/C:/Users/Home/git/AutoTKO/TKO/build/reports/tests/1564035355493.0.png
+Page source: file:/C:/Users/Home/git/AutoTKO/TKO/build/reports/tests/1564035355493.0.html
+Timeout: 5 s.
+	at com.codeborne.selenide.impl.WebElementSource.checkCondition(WebElementSource.java:72)
+	at com.codeborne.selenide.commands.Should.should(Should.java:35)
+	at com.codeborne.selenide.commands.Should.execute(Should.java:29)
+	at com.codeborne.selenide.commands.Should.execute(Should.java:12)
+	at com.codeborne.selenide.commands.Commands.execute(Commands.java:144)
+	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:99)
+	at com.codeborne.selenide.impl.SelenideElementProxy.invoke(SelenideElementProxy.java:65)
+	at com.sun.proxy.$Proxy10.waitUntil(Unknown Source)
+	at com.pages.tko_20_DeleteON.buttonApprove(tko_20_DeleteON.java:83)
+	at com.pages.tko_20_DeleteON.request(tko_20_DeleteON.java:185)
+	at com.pages.tko_20_DeleteON.DeleteON(tko_20_DeleteON.java:231)
+	at com.tests.smoke.Smoke_tko_20.smoke1(Smoke_tko_20.java:18)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>61</td>
+<td>[Smoke_tko_20 passed=0 failed=0 skipped=0]</td></tr>
 </table><p>
 </body>
 </html>
