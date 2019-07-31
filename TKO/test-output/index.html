@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-SMOKE_TESTS_TKO">
-              <span class="suite-name border-failed">SMOKE TESTS TKO</span>
+              <span class="suite-name border-passed">SMOKE TESTS TKO</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,21 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method, 1 failed,   </span>
+                    <span class="method-stats">1 method,   1 passed</span>
                   </li>
                   <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-SMOKE_TESTS_TKO" class="hide-methods failed suite-SMOKE_TESTS_TKO"> (hide)</a> <!-- hide-methods failed suite-SMOKE_TESTS_TKO -->
-                      <a href="#" panel-name="suite-SMOKE_TESTS_TKO" class="show-methods failed suite-SMOKE_TESTS_TKO"> (show)</a> <!-- show-methods failed suite-SMOKE_TESTS_TKO -->
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-SMOKE_TESTS_TKO" class="hide-methods passed suite-SMOKE_TESTS_TKO"> (hide)</a> <!-- hide-methods passed suite-SMOKE_TESTS_TKO -->
+                      <a href="#" panel-name="suite-SMOKE_TESTS_TKO" class="show-methods passed suite-SMOKE_TESTS_TKO"> (show)</a> <!-- show-methods passed suite-SMOKE_TESTS_TKO -->
                     </span>
-                    <div class="method-list-content failed suite-SMOKE_TESTS_TKO">
+                    <div class="method-list-content passed suite-SMOKE_TESTS_TKO">
                       <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-SMOKE_TESTS_TKO" title="com.tests.smoke.Smoke_tko_20" hash-for-method="smoke1">smoke1</a> <!-- method navigator-link -->
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-SMOKE_TESTS_TKO" title="com.tests.smoke.Smoke_tko_25" hash-for-method="smoke1">smoke1</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content failed suite-SMOKE_TESTS_TKO -->
+                    </div> <!-- method-list-content passed suite-SMOKE_TESTS_TKO -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -117,10 +117,10 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-SMOKE_TESTS_TKO" class="panel SMOKE_TESTS_TKO">
-          <div class="suite-SMOKE_TESTS_TKO-class-failed">
+          <div class="suite-SMOKE_TESTS_TKO-class-passed">
             <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">com.tests.smoke.Smoke_tko_20</span>
+              <img src="passed.png"/>
+              <span class="class-name">com.tests.smoke.Smoke_tko_25</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
@@ -128,29 +128,10 @@
                   <a name="smoke1">
                   </a> <!-- smoke1 -->
                   <span class="method-name">smoke1</span>
-                  <div class="stack-trace">Element should be visible {By.xpath: //div[@class=&apos;v-button v-widget friendly v-button-friendly icon v-button-icon&apos;]}
-Element: &apos;&lt;div class=&quot;v-button v-widget friendly v-button-friendly icon v-button-icon&quot; role=&quot;button&quot; tabindex=&quot;0&quot; displayed:false&gt;&lt;/div&gt;&apos;
-Screenshot: file:/C:/Users/Home/git/AutoTKO/TKO/build/reports/tests/1564035355493.0.png
-Page source: file:/C:/Users/Home/git/AutoTKO/TKO/build/reports/tests/1564035355493.0.html
-Timeout: 5 s.
-	at com.codeborne.selenide.impl.WebElementSource.checkCondition(WebElementSource.java:72)
-	at com.codeborne.selenide.commands.Should.should(Should.java:35)
-	at com.codeborne.selenide.commands.Should.execute(Should.java:29)
-	at com.codeborne.selenide.commands.Should.execute(Should.java:12)
-	at com.codeborne.selenide.commands.Commands.execute(Commands.java:144)
-	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:99)
-	at com.codeborne.selenide.impl.SelenideElementProxy.invoke(SelenideElementProxy.java:65)
-	at com.sun.proxy.$Proxy10.waitUntil(Unknown Source)
-	at com.pages.tko_20_DeleteON.buttonApprove(tko_20_DeleteON.java:83)
-	at com.pages.tko_20_DeleteON.request(tko_20_DeleteON.java:185)
-	at com.pages.tko_20_DeleteON.DeleteON(tko_20_DeleteON.java:231)
-	at com.tests.smoke.Smoke_tko_20.smoke1(Smoke_tko_20.java:18)
-... Removed 25 stack frames
-</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-SMOKE_TESTS_TKO-class-failed -->
+          </div> <!-- suite-SMOKE_TESTS_TKO-class-passed -->
         </div> <!-- panel SMOKE_TESTS_TKO -->
         <div panel-name="test-xml-SMOKE_TESTS_TKO" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -170,7 +151,7 @@ Timeout: 5 s.
     &lt;parameter name=&quot;user&quot; value=&quot;login&quot;/&gt;
     &lt;parameter name=&quot;url&quot; value=&quot;http://tko-qa.groupstp.ru/app/#!/&quot;/&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.tests.smoke.Smoke_tko_20&quot;/&gt;
+      &lt;class name=&quot;com.tests.smoke.Smoke_tko_25&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- SMOKE TESTS --&gt;
 &lt;/suite&gt; &lt;!-- SMOKE TESTS TKO --&gt;
@@ -221,13 +202,13 @@ data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'smoke1')
-data.setCell(0, 2, 'com.tests.smoke.Smoke_tko_20')
-data.setCell(0, 3, 61283);
+data.setCell(0, 2, 'com.tests.smoke.Smoke_tko_25')
+data.setCell(0, 3, 36179);
 window.suiteTableData['SMOKE_TESTS_TKO']= { tableData: data, tableDiv: 'times-div-SMOKE_TESTS_TKO'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 36 seconds</span>
               <div id="times-div-SMOKE_TESTS_TKO">
               </div> <!-- times-div-SMOKE_TESTS_TKO -->
             </div> <!-- times-div -->
@@ -243,8 +224,10 @@ return data;
               <div class="reporter-method-output-div">
                 <span class="reporter-method-output"></details></b></span>
                 <span class="reporter-method-output"><a href=..\videos\smoke1.WMV download="filename">Download video</a></span>
-                <span class="reporter-method-output"><br><b><div align="left" style=" height:30px; width:250px; padding: 10px; border: 2px solid gray; margin: 0; background-color:#ff2500;">Class - Smoke_tko_20  TEST - smoke1 Fail! chrome</div></b></span>
-                <span class="reporter-method-output"></b><details><summary>Show steps..</summary> <br></span>
+                <span class="reporter-method-output"><video width="320" height="240" controls>
+  <source src="..\videos\smoke1.WMV" type="video/wmv">
+</video></span>
+                <span class="reporter-method-output"><br><b><div align="left" style=" height:30px; width:250px; padding: 10px;  border: 2px solid gray; margin: 0; background-color:#19FF3A;">Class - Smoke_tko_25 TEST - smoke1 OK! chrome</div></b></span>
               </div> <!-- reporter-method-output-div -->
             </div> <!-- reporter-method-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -262,32 +245,30 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.tests.smoke.Smoke_tko_20</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.tests.smoke.Smoke_tko_25</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
                 <span class="method-name">cleanUp</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-class before">
                 <span class="method-name">setUp(http://tko-qa.groupstp.ru/app/#!/, test)</span>
-                <span class="method-start">16 ms</span>
+                <span class="method-start">19 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
-                <span class="method-name">startVideo([TestResult name=smoke1 on [Smoke_tko_20 passed=0 failed=0 skipped=0] status=FAILURE method=Smoke_tk...)</span>
-                <span class="method-start">5910 ms</span>
+                <span class="method-name">startVideo([TestResult name=smoke1 on [Smoke_tko_25 passed=0 failed=0 skipped=0] status=SUCCESS method=Smoke_tk...)</span>
+                <span class="method-start">6102 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">smoke1</span>
-                <span class="method-start">6723 ms</span>
+                <span class="method-start">6950 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">result([TestResult name=smoke1 on [Smoke_tko_20 passed=0 failed=0 skipped=0] status=FAILURE method=Smoke_tk...)</span>
-                <span class="method-start">68009 ms</span>
+                <span class="method-name">result([TestResult name=smoke1 on [Smoke_tko_25 passed=0 failed=0 skipped=0] status=SUCCESS method=Smoke_tk...)</span>
+                <span class="method-start">43130 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">68135 ms</span>
+                <span class="method-start">43181 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

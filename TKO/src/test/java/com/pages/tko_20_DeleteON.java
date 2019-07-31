@@ -1,11 +1,8 @@
 package com.pages;
 
-import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.sleep;
-
-import java.io.File;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -73,7 +70,7 @@ public class tko_20_DeleteON {
 	}
 
 	public SelenideElement CheckingOfUnits() {
-		return $(By.xpath("//div[text()='Особый случай']")).waitUntil(visible, app.timeOut);
+		return $(By.xpath("//div[text()='Аренда']")).waitUntil(visible, app.timeOut);
 	}
 
 	public SelenideElement selectRequest() {

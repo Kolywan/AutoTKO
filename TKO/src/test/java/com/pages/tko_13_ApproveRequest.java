@@ -6,10 +6,10 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.sleep;
 
 import java.io.File;
+import java.util.Random;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 
 import com.codeborne.selenide.SelenideElement;
 import com.main.appmanager.ApplicationManager;
@@ -63,7 +63,7 @@ public class tko_13_ApproveRequest {
 		return $(By.xpath("//div[@class='v-filterselect-button']")).waitUntil(visible, app.timeOut);
 	}
 	public SelenideElement selectObject() {
-		return $(By.xpath("//td[@class='gwt-MenuItem']")).waitUntil(visible, app.timeOut);
+		return $(By.xpath("//div[@class='v-filterselect-suggestmenu']//td[1]")).waitUntil(visible, app.timeOut);
 	}
 	public SelenideElement infoText() {
 		return $(By.xpath("//div[@class='v-Notification warning v-Notification-warning']")).waitUntil(visible, app.timeOut);
@@ -142,22 +142,63 @@ public class tko_13_ApproveRequest {
 		return $(By.xpath("//div[@class='v-button v-widget icon v-button-icon c-primary-action v-button-c-primary-action']")).waitUntil(visible, app.timeOut);
 	}
 	
-	
+	public SelenideElement menuApp() {
+		return $(By.xpath("//div[@class='v-menubar v-widget c-main-menu v-menubar-c-main-menu v-has-width']/span[3]")).waitUntil(visible, app.timeOut);
+	}
+
+	public SelenideElement menuON() {
+		return $(By.xpath("//div[@class='v-menubar-submenu v-widget c-main-menu v-menubar-submenu-c-main-menu v-has-width']/span[2]")).waitUntil(visible, app.timeOut);
+	}
+
+	public SelenideElement ON() {
+		return $(By.xpath("//div[@class='v-menubar-submenu v-widget c-main-menu v-menubar-submenu-c-main-menu v-has-width v-menubar-submenu-has-icons']/span[1]")).waitUntil(visible, app.timeOut);
+	}
+	public SelenideElement N() {
+		return $(By.xpath("//table[@class='v-table-table']/tbody/tr[15]/td[4]/div")).waitUntil(visible, app.timeOut);
+	}
 
 
+	public void getKadastrNumber() {
+// Авторизация под администратором
+		login().sendKeys("testadmin");
+		sleep(1000);
+		password().sendKeys("1");
+		sleep(1000);
+		buttonGo().click();
+		sleep(1500);
+//Зайти в "Приложение" 
+		menuApp().click();
+		sleep(1000);
+//перейти "Объекты недвижимости" 
+		menuON().click();
+		sleep(1000);
+//Выбрать "Объекты недвижимости" 
+		ON().click();
+		
+		sleep(5000);
+	}
+//Случайно выбираем адрес из списка
+//Сохраняем кадастровый номер
+	public String KadasN() {
+		Random random = new Random();
+		int n = 10 + random.nextInt(46 - 1);
+		System.out.println(n);
+		String number = $(By.xpath("//table[@class='v-table-table']/tbody/tr["+n+"]/td[4]/div")).getText();
 
+		return number;
+	}
 
 	public void startUser() {
+		String Num=KadasN();
+		System.out.println(Num);
 //Авторизоваться под пользователем 
+		exit().click();
 		login().sendKeys("6783");
 		sleep(1000);
 		password().sendKeys("6783");
 		sleep(1000);
 		buttonGo().click();
 		sleep(1500);
-
-	}
-	public void selectAgent() {
 
 //Двойным щелчком мыши заходим в контрагента (Открывается окно "Карточка л/с")
 		agent().doubleClick();
@@ -171,13 +212,10 @@ public class tko_13_ApproveRequest {
 //Разворачиваем окно на весь экран
 		boxMax().click();
 		sleep(1000);
-	}
-
-	public void editAgent() {
-
 		
 //Указываем кадастровый номер
-		TextBoxKadasNumber().sendKeys("38:26:040401:140");
+		System.out.println(Num);
+		TextBoxKadasNumber().sendKeys(Num);
 		sleep(1000);
 //Кликаем "Найти"(Появляются доп. поля)
 		buttonFind().click();
@@ -186,7 +224,12 @@ public class tko_13_ApproveRequest {
 		menuObject().click();
 		sleep(1000);
 //Выбираем “Категория объекта” 
-		selectObject().click();
+		Random r = new Random();
+		int Low = 1;
+		int High = 10;
+		int Result = r.nextInt(High-Low) + Low;
+		
+		$(By.xpath("(//td[@class='gwt-MenuItem'])["+Result+"]")).click();
 		sleep(1000);
 		
 		
@@ -232,15 +275,20 @@ public class tko_13_ApproveRequest {
 		menuMyRequest().click();
 		sleep(3000);
 		buttonUpdate().click();
-		//		Assert.assertEquals(nameTextProblem, "Мой автомобиль не заводится!");
+		sleep(2500);
      }
 	
-//	public str etapText() {
-//		String etapT = etap().getText();
-//		return etapT;
-//	}
-		
+	public String et() {
+		String etapText = etap().getText();
+		System.out.println(etapText);
+//		etap().shouldNotHave(text("Верификация"));
+//		etap().shouldNotHave(text(etapText),text("Верификация"));
+//		etap().shouldNot(text(etapText),text("Верификация"));
+		return etapText;
+	}
+	
 	public void startAdmin() {
+		String res=et();
 //Выходим из учетной записи пользователя (Открывается страница авторизации)
 		exit().click();
 		sleep(5000);
@@ -251,15 +299,17 @@ public class tko_13_ApproveRequest {
 		sleep(1000);
 		buttonGo().click();
 		sleep(1500);
-
-	}
-	public void request() {
-
 //Перейти на вкладку "заявки на изменение"
 		requestСhange().click();
 		sleep(8000);
-//Кликаем раздел "Особый случай"(Открываются заявки на изменение)
-		CheckingOfUnits().click();
+//Кликаем раздел того этапа, система которого присвоила заявке ранее (Открываются заявки на изменение)
+		
+		System.out.println("2 ="+res);
+		
+		$(By.xpath("//div[text()='"+res+"']")).click();
+		
+		
+		
 		sleep(8000);
 //Кликаем по заявке два раза (Открывается окно заявка на изменение)
 		selectRequest().doubleClick();
@@ -278,7 +328,7 @@ public class tko_13_ApproveRequest {
 		sleep(8000);
 //Перейти в раздел "Принято"
 		menuAccepted().click();
-		sleep(5000);
+		sleep(8000);
 //Двойным щелчком открываем заявку 
 		choiceRuquest().doubleClick();
 		sleep(5000);
@@ -305,13 +355,11 @@ public class tko_13_ApproveRequest {
 
 	}
 	public void ApproveRequest() {
-		
+		app.tko_13().getKadastrNumber();
+		app.tko_13().KadasN();
 		app.tko_13().startUser();
-		app.tko_13().selectAgent();
-		app.tko_13().editAgent();
 		app.tko_13().loadFile();
 		app.tko_13().startAdmin();
-		app.tko_13().request();
 		app.tko_13().startUser2();
 		
 		

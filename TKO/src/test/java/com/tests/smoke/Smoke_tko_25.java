@@ -10,12 +10,12 @@ public class Smoke_tko_25 extends BaseTest {
 	@Parameters()
 	@Test(groups = { "smoke" }, priority = 1)
 	
-	//Привязка пользователя к контрагенту c ПНООЛР
+	//tko-25 : Отправка уведомлений массово
 
 	
 	public void smoke1() throws Exception {
 
-		app.tko_25().AddUserAgentPNOOLR();
+		app.tko_25().SendAllMassage();
 
 
 	}
