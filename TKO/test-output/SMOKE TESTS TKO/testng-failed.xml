@@ -10,16 +10,16 @@
     <parameter name="user" value="login"/>
     <parameter name="url" value="http://tko-qa.groupstp.ru/app/#!/"/>
     <classes>
-      <class name="com.tests.smoke.Smoke_tko_26">
+      <class name="com.tests.smoke.Smoke_tko_30">
         <methods>
           <include name="cleanUp"/>
-          <include name="result"/>
           <include name="smoke1"/>
+          <include name="result"/>
           <include name="startVideo"/>
           <include name="setUp"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- com.tests.smoke.Smoke_tko_26 -->
+      </class> <!-- com.tests.smoke.Smoke_tko_30 -->
     </classes>
   </test> <!-- SMOKE TESTS(failed) -->
 </suite> <!-- Failed suite [SMOKE TESTS TKO] -->

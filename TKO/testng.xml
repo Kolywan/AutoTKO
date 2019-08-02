@@ -26,7 +26,8 @@
 		<classes>
 
 
-	<class name="com.tests.smoke.Smoke_tko_25" />
+	<class name="com.tests.smoke.Smoke_tko_30" />
+
 
 </classes>
 	</test>

@@ -39,8 +39,10 @@ import com.pages.tko_24_Account;
 import com.pages.tko_25_SendAllMassage;
 import com.pages.tko_26_SendSomeMassage;
 import com.pages.tko_27_SendEmail;
+import com.pages.tko_28_ApproveContract;
 import com.pages.tko_99_UserAndAgentPNOOLR;
 import com.pages.tko_2_UserAndAgent;
+import com.pages.tko_30_AccountRent;
 import com.pages.tko_3_CreateUser;
 import com.pages.tko_4_AddDocument;
 import com.pages.tko_5_AddProperty;
@@ -89,6 +91,8 @@ public class ApplicationManager {
 	protected tko_25_SendAllMassage tko_25;
 	protected tko_26_SendSomeMassage tko_26;
 	protected tko_27_SendEmail tko_27;
+	protected tko_28_ApproveContract tko_28;
+	protected tko_30_AccountRent tko_30;
 	protected DelEmails deleteMails;
 	protected GetEmail getEmail;
 
@@ -270,6 +274,14 @@ public class ApplicationManager {
 	// ##############################
 	public tko_27_SendEmail tko_27() {
 		return tko_27 = new tko_27_SendEmail();
+	}
+	// ##############################
+	public tko_28_ApproveContract tko_28() {
+		return tko_28 = new tko_28_ApproveContract();
+	}
+	// ##############################
+	public tko_30_AccountRent tko_30() {
+		return tko_30 = new tko_30_AccountRent();
 	}
 	// ##############################
 	public tko_99_UserAndAgentPNOOLR tko_99() {

@@ -10,7 +10,7 @@ public class Smoke_tko_27 extends BaseTest {
 	@Parameters()
 	@Test(groups = { "smoke" }, priority = 1)
 	
-	//tko-28 : Принятие договора
+	//tko-27 : Рассылка Email
 
 	
 	public void smoke1() throws Exception {

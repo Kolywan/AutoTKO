@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>SMOKE TESTS</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Jul 31 16:51:29 GMT+06:00 2019</td>
+<td>Started on:</td><td>Fri Aug 02 16:23:00 GMT+06:00 2019</td>
 </tr>
-<tr><td>Total time:</td><td>43 seconds (43765 ms)</td>
+<tr><td>Total time:</td><td>75 seconds (75333 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,30 +67,134 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.tests.smoke.Smoke_tko_25.smoke1()'><b>smoke1</b><br>Test class: com.tests.smoke.Smoke_tko_25<br/>
-<a href="#Output-718512571" onClick='toggleBox("Output-718512571", this, "Show output", "Hide output");'>Show output</a>
+<td title='com.tests.smoke.Smoke_tko_30.smoke1()'><b>smoke1</b><br>Test class: com.tests.smoke.Smoke_tko_30<br/>
+<a href="#Output-727119352" onClick='toggleBox("Output-727119352", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-718512571" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-718512571">
+<a href="#Output-727119352" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-727119352">
 </details></b><br/>
 <a href=..\videos\smoke1.WMV download="filename">Download video</a><br/>
-<video width="320" height="240" controls>
-  <source src="..\videos\smoke1.WMV" type="video/wmv">
-</video><br/>
-<br><b><div align="left" style=" height:30px; width:250px; padding: 10px;  border: 2px solid gray; margin: 0; background-color:#19FF3A;">Class - Smoke_tko_25 TEST - smoke1 OK! chrome</div></b><br/>
+<br><b><div align="left" style=" height:30px; width:250px; padding: 10px; border: 2px solid gray; margin: 0; background-color:#ff2500;">Class - Smoke_tko_30  TEST - smoke1 Fail! chrome</div></b><br/>
+</b><details><summary>Show steps..</summary> <br><br/>
 </div>
 </td>
-<td></td>
-<td>36</td>
-<td>[Smoke_tko_25 passed=0 failed=0 skipped=0]</td></tr>
+<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;div tabindex=&quot;0&quot; role=&quot;button&quot; class=&quot;v-button v-widget c-logout-button v-button-c-logout-button icon v-button-icon v-button-empty-caption&quot;&gt;...&lt;/div&gt; is not clickable at point (1889, 21). Other element would receive the click: &lt;div class=&quot;v-window-modalitycurtain&quot; style=&quot;z-index: 10000;&quot;&gt;&lt;/div&gt;
+  (Session info: chrome=76.0.3809.87)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-J47TJ88&apos;, ip: &apos;192.168.0.105&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_201&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 76.0.3809.87, chrome: {chromedriverVersion: 75.0.3770.140 (2d9f97485c7b..., userDataDir: C:\Users\Home\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:56198}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 283e398106abb4f613c7f988892d01f3
+Screenshot: file:/C:/Users/Home/git/AutoTKO/TKO/build/reports/tests/1564741454580.0.png
+Page source: file:/C:/Users/Home/git/AutoTKO/TKO/build/reports/tests/1564741454580.0.html
+Timeout: 4 s.
+Caused by: ElementClickInterceptedException: element click intercepted: Element &lt;div tabindex=&quot;0&quot; role=&quot;button&quot; class=&quot;v-button v-widget c-logout-button v-button-c-logout-button icon v-button-icon v-button-empty-caption&quot;&gt;...&lt;/div&gt; is not clickable at point (1889, 21). Other element would receive the click: &lt;div class=&quot;v-window-modalitycurtain&quot; style=&quot;z-index: 10000;&quot;&gt;&lt;/div&gt;
+	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:125)
+	at com.codeborne.selenide.impl.SelenideElementProxy.invoke(SelenideElementProxy.java:65)
+	at com.sun.proxy.$Proxy10.click(Unknown Source)
+	at com.pages.tko_30_AccountRent.Account(tko_30_AccountRent.java:494)
+	at com.pages.tko_30_AccountRent.AccountRent(tko_30_AccountRent.java:612)
+	at com.tests.smoke.Smoke_tko_30.smoke1(Smoke_tko_30.java:18)
+Caused by: org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;div tabindex=&quot;0&quot; role=&quot;button&quot; class=&quot;v-button v-widget c-logout-button v-button-c-logout-button icon v-button-icon v-button-empty-caption&quot;&gt;...&lt;/div&gt; is not clickable at point (1889, 21). Other element would receive the click: &lt;div class=&quot;v-window-modalitycurtain&quot; style=&quot;z-index: 10000;&quot;&gt;&lt;/div&gt;
+  (Session info: chrome=76.0.3809.87)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-J47TJ88&apos;, ip: &apos;192.168.0.105&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_201&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 76.0.3809.87, chrome: {chromedriverVersion: 75.0.3770.140 (2d9f97485c7b..., userDataDir: C:\Users\Home\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:56198}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 283e398106abb4f613c7f988892d01f3
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at com.codeborne.selenide.commands.Click.click(Click.java:26)
+	at com.codeborne.selenide.commands.Click.execute(Click.java:13)
+	at com.codeborne.selenide.commands.Click.execute(Click.java:9)
+	at com.codeborne.selenide.commands.Commands.execute(Commands.java:144)
+	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:99)
+	... 30 more
+... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace727119352", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace727119352'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;div tabindex=&quot;0&quot; role=&quot;button&quot; class=&quot;v-button v-widget c-logout-button v-button-c-logout-button icon v-button-icon v-button-empty-caption&quot;&gt;...&lt;/div&gt; is not clickable at point (1889, 21). Other element would receive the click: &lt;div class=&quot;v-window-modalitycurtain&quot; style=&quot;z-index: 10000;&quot;&gt;&lt;/div&gt;
+  (Session info: chrome=76.0.3809.87)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-J47TJ88&apos;, ip: &apos;192.168.0.105&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_201&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 76.0.3809.87, chrome: {chromedriverVersion: 75.0.3770.140 (2d9f97485c7b..., userDataDir: C:\Users\Home\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:56198}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 283e398106abb4f613c7f988892d01f3
+Screenshot: file:/C:/Users/Home/git/AutoTKO/TKO/build/reports/tests/1564741454580.0.png
+Page source: file:/C:/Users/Home/git/AutoTKO/TKO/build/reports/tests/1564741454580.0.html
+Timeout: 4 s.
+Caused by: ElementClickInterceptedException: element click intercepted: Element &lt;div tabindex=&quot;0&quot; role=&quot;button&quot; class=&quot;v-button v-widget c-logout-button v-button-c-logout-button icon v-button-icon v-button-empty-caption&quot;&gt;...&lt;/div&gt; is not clickable at point (1889, 21). Other element would receive the click: &lt;div class=&quot;v-window-modalitycurtain&quot; style=&quot;z-index: 10000;&quot;&gt;&lt;/div&gt;
+	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:125)
+	at com.codeborne.selenide.impl.SelenideElementProxy.invoke(SelenideElementProxy.java:65)
+	at com.sun.proxy.$Proxy10.click(Unknown Source)
+	at com.pages.tko_30_AccountRent.Account(tko_30_AccountRent.java:494)
+	at com.pages.tko_30_AccountRent.AccountRent(tko_30_AccountRent.java:612)
+	at com.tests.smoke.Smoke_tko_30.smoke1(Smoke_tko_30.java:18)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;div tabindex=&quot;0&quot; role=&quot;button&quot; class=&quot;v-button v-widget c-logout-button v-button-c-logout-button icon v-button-icon v-button-empty-caption&quot;&gt;...&lt;/div&gt; is not clickable at point (1889, 21). Other element would receive the click: &lt;div class=&quot;v-window-modalitycurtain&quot; style=&quot;z-index: 10000;&quot;&gt;&lt;/div&gt;
+  (Session info: chrome=76.0.3809.87)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-J47TJ88&apos;, ip: &apos;192.168.0.105&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_201&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 76.0.3809.87, chrome: {chromedriverVersion: 75.0.3770.140 (2d9f97485c7b..., userDataDir: C:\Users\Home\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:56198}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 283e398106abb4f613c7f988892d01f3
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at com.codeborne.selenide.commands.Click.click(Click.java:26)
+	at com.codeborne.selenide.commands.Click.execute(Click.java:13)
+	at com.codeborne.selenide.commands.Click.execute(Click.java:9)
+	at com.codeborne.selenide.commands.Commands.execute(Commands.java:144)
+	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:99)
+	... 30 more
+</pre></div></td>
+<td>63</td>
+<td>[Smoke_tko_30 passed=0 failed=0 skipped=0]</td></tr>
 </table><p>
 </body>
 </html>

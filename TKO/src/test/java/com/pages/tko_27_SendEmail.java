@@ -45,74 +45,22 @@ public class tko_27_SendEmail {
 						.waitUntil(visible, app.timeOut);
 	}
 
-	public SelenideElement checkboxImportant() {
-		return $(By.xpath("//div[text()='Важное']/../../span/input")).waitUntil(visible, app.timeOut);
-	}
-
-	public SelenideElement checkboxAllUsers() {
-		return $(By.xpath("//label[text()='Все пользователи']/../../span/input")).waitUntil(visible, app.timeOut);
-	}
-
 	public SelenideElement textBoxTeam() {
-		return $(By.xpath(
-				"//input[@class='v-textfield v-widget v-textfield-error v-textfield-error-error v-textfield-required v-required v-has-width c-empty-value']"))
-						.waitUntil(visible, app.timeOut);
+		return $(By.xpath("//input[@class='v-textfield v-widget v-textfield-error v-textfield-error-error v-textfield-required v-required v-has-width c-empty-value']")).waitUntil(visible, app.timeOut);
 	}
 
-	public SelenideElement textBoxVisualEditor() {
+	public SelenideElement textBoxToWhom() {
+		return $(By.xpath("//input[@class='v-textfield v-widget v-has-width c-empty-value']")).waitUntil(visible, app.timeOut);
+	}
+
+	public SelenideElement textBoxMassage() {
 		return $(By.xpath("//iframe[@class='gwt-RichTextArea']")).waitUntil(visible, app.timeOut);
-	}
-
-	public SelenideElement menuRecipients() {
-		return $(By.xpath("//div[text()='Получатели']")).waitUntil(visible, app.timeOut);
-	}
-	public SelenideElement ButtonAdd() {
-		return $(By.xpath("//span[text()='Добавить']/../..")).waitUntil(visible, app.timeOut);
-	}
-	public SelenideElement menuTemplate() {
-		return $(By.xpath("//div[text()='Шаблоны']")).waitUntil(visible, app.timeOut);
-	}
-
-	public SelenideElement selectTextTemplate() {
-		return $(By.xpath("//span[text()='Новость о снижении нормативов ТКО']/../../..//div")).waitUntil(visible, app.timeOut);
-	}
-
-	public SelenideElement buttonСhoose() {
-		return $(By.xpath("//span[text()='Выбрать']/../..")).waitUntil(visible, app.timeOut);
-	}
-
-	public SelenideElement buttonYes() {
-		return $(By.xpath("//span[text()='Да']/../..")).waitUntil(visible, app.timeOut);
 	}
 
 	public SelenideElement buttonSend() {
 		return $(By.xpath("//span[text()='Отправить']/../..")).waitUntil(visible, app.timeOut);
 	}
 
-	public SelenideElement searchCondition() {
-		return $(By.xpath("//div[@class='v-slot v-slot-link v-align-middle']")).waitUntil(visible, app.timeOut);
-	}
-
-	public SelenideElement searchLogin() {
-		return $(By.xpath("//div[@class='v-tree-node-caption']//span[text()='Логин']")).waitUntil(visible, app.timeOut);
-	}
-
-	public SelenideElement searchText() {
-		return $(By.xpath("//div[@class='v-slot v-slot-param-field']/input")).waitUntil(visible, app.timeOut);
-	}
-
-	public SelenideElement searchButton() {
-		return $(By.xpath(
-				"//div[@class='v-button v-widget filter-search-button v-button-filter-search-button icon v-button-icon']"))
-						.waitUntil(visible, app.timeOut);
-	}
-
-	public SelenideElement user() {
-		return $(By.xpath("//div[@class='v-table-cell-wrapper' and text()='6783']")).waitUntil(visible, app.timeOut);
-	}
-	public SelenideElement exit() {
-		return $(By.xpath("//div[@class='v-button v-widget c-logout-button v-button-c-logout-button icon v-button-icon v-button-empty-caption']")).waitUntil(visible, app.timeOut);
-	}
 	public void start() {
 // Авторизация под администратором
 		login().sendKeys("testadmin");
@@ -124,83 +72,31 @@ public class tko_27_SendEmail {
 
 	}
 
-	public void selectAgent() {
+	public void Email() {
 
 //Зайти в "Приложение" 
 		menuApp().click();
 		sleep(1000);
-//Выбрать "Рассылка уведомлений" 
+//Выбрать "Рассылка Email" (Открыто окно "отправить Email")
 		email().click();
 		sleep(1000);
-//Cтавим галочку - важное
-		checkboxImportant().sendKeys(Keys.SPACE);
+//Заполнить поля:"Тема"
+		textBoxTeam().sendKeys("Оплата");
 		sleep(1000);
-//Указать тему
-		textBoxTeam().sendKeys("Важное");
+//Заполнить поля:"Кому"
+		textBoxToWhom().sendKeys("d-150788@mail.ru");
 		sleep(1000);
-	}
-
-	public void selectUser() {
-
-//В "Визуальном редакторе" написать сообщение
-		textBoxVisualEditor().sendKeys("Важное");
-		sleep(1000);
-//Перейти на вкладку "Получатели"
-		menuRecipients().click();
-		sleep(1000);
-// Убираем галочку "все пользователи"
-		checkboxAllUsers().sendKeys(Keys.SPACE);
-		sleep(1000);
-// Кликаем "Добавить"
-		ButtonAdd().click();
-		sleep(1000);
-// Добавляем условие поиска
-		searchCondition().click();
-		sleep(1000);
-// Из предложенного списка двойным щелчком мыши выбираем "Логин"
-		searchLogin().doubleClick();
-		sleep(1000);
-// Вписываем условие поиска
-		searchText().sendKeys("6783");
-		sleep(1000);
-// Нажимаем кнопку "Поиск"
-		searchButton().click();
-		sleep(1000);
-// Двойным щелчком выбираем найденного пользователя
-		user().doubleClick();
-		sleep(1000);
-//Перейти на вкладку "Шаблоны"
-		menuTemplate().click();
-		sleep(1000);
-//Выбираем шаблон
-		selectTextTemplate().click();
-		sleep(1000);
-//Нажимаем кнопку "Выбрать"(Открывается окно подтверждения)
-		buttonСhoose().click();
-		sleep(1000);
-//Кликаем"Да"(Переходим на вкладку детали)
-		buttonYes().click();
-		sleep(6000);
+//Заполнить поля:"Сообщение"
+		textBoxMassage().sendKeys("Важное");
 //Нажимаем кнопку "Отправить"
 		buttonSend().click();
 		sleep(10000);
-////Выходим из учетной записи администратора (Открывается страница авторизации)
-//		exit().click();
-//		sleep(5000);
-////Авторизоваться под пользователем
-//		login().sendKeys("6783");
-//		sleep(1000);
-//		password().sendKeys("6783");
-//		sleep(1000);
-//		buttonGo().click();
-//		sleep(7500);
 	}
 
 	public void SendEmail() {
 
 		app.tko_27().start();
-		app.tko_27().selectAgent();
-		app.tko_27().selectUser();
+		app.tko_27().Email();
 
 	}
 

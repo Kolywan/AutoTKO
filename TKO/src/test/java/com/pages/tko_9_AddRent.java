@@ -44,7 +44,7 @@ public class tko_9_AddRent {
 	}
 
 
-	public SelenideElement selectObject() {
+	public SelenideElement selectON() {
 		return $(By.xpath("//tbody[@class='v-grid-body']/tr[2]")).waitUntil(visible, app.timeOut);
 	}
 	public SelenideElement buttonAdd() {
@@ -54,12 +54,12 @@ public class tko_9_AddRent {
 		return $(By.xpath("//div[@class='v-filterselect-button']")).waitUntil(visible, app.timeOut);
 	}
 	public SelenideElement selectIP() {
-		return $(By.xpath("//td[@class='gwt-MenuItem']")).waitUntil(visible, app.timeOut);
+		return $(By.xpath("//span[text()='ИП']/..")).waitUntil(visible, app.timeOut);
 	}
 	public SelenideElement textINN() {
 		return $(By.xpath("//input[@class='v-textfield v-widget v-textfield-error v-textfield-error-error v-textfield-required v-required v-has-width c-empty-value']")).waitUntil(visible, app.timeOut);
 	}
-	public SelenideElement buttonFind() {
+	public SelenideElement buttonFindRent() {
 		return $(By.xpath("//div[@class='v-button v-widget v-has-width']")).waitUntil(visible, app.timeOut);
 	}
 	public SelenideElement textFIO() {
@@ -68,14 +68,14 @@ public class tko_9_AddRent {
 	public SelenideElement textFone() {
 		return $(By.xpath("//input[@class='c-maskedfield v-widget c-maskedfield-error c-maskedfield-error-error c-maskedfield-required v-required v-has-width c-maskedfield-empty']")).waitUntil(visible, app.timeOut);
 	}
-	public SelenideElement menuObject() {
-		return $(By.xpath("(//div[@class='v-filterselect-button'])[2]")).waitUntil(visible, app.timeOut);
+	public SelenideElement menuObjectRent() {
+		return $(By.xpath("//div[@class='v-filterselect-button']")).waitUntil(visible, app.timeOut);
 	}
 	public SelenideElement selectObject2() {
 		return $(By.xpath("(//td[@class='gwt-MenuItem'])[2]")).waitUntil(visible, app.timeOut);
 	}
 	public SelenideElement textS() {
-		return $(By.xpath("(//div[@class='c-fglayout-slot c-full-height-widget inline'])[10]/input")).waitUntil(visible, app.timeOut);
+		return $(By.xpath("(//div[text()='Площадь'])[2]/../../input")).waitUntil(visible, app.timeOut);
 	}
 	public SelenideElement buttonSend() {
 		return $(By.xpath("(//div[@class='v-button v-widget icon v-button-icon c-primary-action v-button-c-primary-action'])[3]")).waitUntil(visible, app.timeOut);
@@ -109,7 +109,7 @@ public class tko_9_AddRent {
 
 	public void addRent() {
 //Слева выбираем объект недвижимости
-		selectObject().click();
+		selectON().click();
 		sleep(3000);
 //Кликаем "Добавить"( появляется окно "редактор арендатора недвижимости".)
 		buttonAdd().click();
@@ -124,7 +124,7 @@ public class tko_9_AddRent {
 		textINN().sendKeys("380100986876");
 		sleep(1500);
 //Кликаем "найти" 
-		buttonFind().click();
+		buttonFindRent().click();
 		sleep(2500);
 		
 	}
@@ -147,7 +147,7 @@ public class tko_9_AddRent {
 		textFone().sendKeys("79965009685");
 		sleep(1000);
 //Открываем меню "Категория использования"
-		menuObject().click();
+		menuObjectRent().click();
 		sleep(1500);
 //Выбираем "Категория использования"
 		selectObject2().click();
@@ -160,7 +160,6 @@ public class tko_9_AddRent {
 		sleep(1500);
 //Кликаем Ок
 		buttonOK().click();
-		
 		sleep(6000);
      }
 	public void AddProperty() {
