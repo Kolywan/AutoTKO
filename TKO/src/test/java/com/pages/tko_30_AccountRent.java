@@ -341,7 +341,9 @@ public class tko_30_AccountRent {
 	public SelenideElement N() {
 		return $(By.xpath("//table[@class='v-table-table']/tbody/tr[15]/td[4]/div")).waitUntil(visible, app.timeOut);
 	}
-
+	public SelenideElement KP() {
+		return $(By.xpath("//tr[@class='v-table-row']/td[3]")).waitUntil(visible, app.timeOut);
+	}
 	public void getKadastrNumber() {
 // Авторизация под администратором
 		login().sendKeys("testadmin");
@@ -529,9 +531,12 @@ public class tko_30_AccountRent {
 		sleep(1000);
 // Открыть вкладку счета
 		menuAccountRent().click();
-		sleep(3000);
+		sleep(8000);
 //Перейти на вкладку арендаторы
 		menuRent().click();
+		sleep(1000);
+		menuRent().click();
+		sleep(1000);
 //Выбираем арендатора
 		selectRent().click();
 //Нажать "ЛК арендатора" (Открыто окно "Карточка л/с" (арендатора)  в нем указана вся инф-я ОН, КП и.д)
@@ -551,14 +556,16 @@ public class tko_30_AccountRent {
 		sleep(1000);
 // Кликаем "Добавить" (Открывается окно "контейнерные площадки" со списком конт.площадок)
 		buttonAddContainer().click();
-		sleep(1000);
+		sleep(3000);
 // В строке адрес указываем адрес объекта недвижимости к которому прикреплена контейнерная площадка
 		textAddress().sendKeys("г Иркутск, ул Карла Либкнехта, д 107-а");
 		sleep(1500);
 // кликаем " Выбрать ближайший "(Система производит поиск)
 		buttonFindContainer().click();
 		sleep(2500);
+		
 // кликаем " Выбрать” (Появляется окно “Редактор контейнерной площадки”)
+
 		buttonSelectContainer().click();
 		sleep(1000);
 // Кликаем “Задать” (появляется окно “График вывоза”)

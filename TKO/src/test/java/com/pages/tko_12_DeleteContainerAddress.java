@@ -36,7 +36,7 @@ public class tko_12_DeleteContainerAddress {
 	}
 
 	public SelenideElement agent() {
-		return $(By.xpath("//table[@class='v-table-table']/tbody/tr")).waitUntil(visible, app.timeOut);
+		return $(By.xpath("//div[@class='v-table-cell-wrapper' or @class='v-captiontext']")).waitUntil(visible, app.timeOut);
 	}
 
 	public SelenideElement menuContainer() {
@@ -47,8 +47,11 @@ public class tko_12_DeleteContainerAddress {
 	public SelenideElement selectObject() {
 		return $(By.xpath("//div[@class='v-table-cell-wrapper']")).waitUntil(visible, app.timeOut);
 	}
-	public SelenideElement buttonAdd() {
-		return $(By.xpath("//div[@class='v-button v-widget primary v-button-primary icon v-button-icon']")).waitUntil(visible, app.timeOut);
+		public SelenideElement selectKP() {
+		return $(By.xpath("//tr[@class='v-table-row']/td")).waitUntil(visible, app.timeOut);
+	}
+	public SelenideElement buttonDelete() {
+		return $(By.xpath("//span[text()='Удалить']/../..")).waitUntil(visible, app.timeOut);
 	}
 	public SelenideElement textAddress() {
 		return $(By.xpath("//input[@class='v-textfield v-widget v-has-width v-textfield-prompt']")).waitUntil(visible, app.timeOut);
@@ -89,44 +92,21 @@ public class tko_12_DeleteContainerAddress {
 //Слева выбираем объект недвижимости 
 		selectObject().click();
 		sleep(1000);
+//Выбираем адрес, который хотим удалить. 
+		selectKP().click();
+		sleep(1000);
 
 	}
 
 	public void editAgent() {
 
-//Кликаем "Добавить" (Открывается окно "контейнерные площадки" со списком конт. площадок)
-		buttonAdd().click();
+//Кликаем "Удалить" (Всплывает окно "Подтверждение" Действительно хотите удалить?)
+		buttonDelete().click();
 		sleep(1000);
-//В строке адрес указываем адрес объекта недвижимости к которому прикреплена контейнерная площадка
-		textAddress().sendKeys("г Иркутск, ул Карла Либкнехта, д 107-а");
-		sleep(1500);
-//кликаем " Выбрать ближайший "(Система производит поиск)
-		buttonFind().click();
-		sleep(2500);
-//кликаем " Выбрать” (Появляется окно “Редактор контейнерной площадки”)
-		buttonSelect().click();
-		sleep(1000);
-//Кликаем “ОК” (всплывает информация что,  запись была отправлена на обработку)
+//Кликаем ОК (Открыто окно "Контейнерные площадки" Запись удалена)
 		buttonOK().click();
-		sleep(2500);
-//Переходим на вкладку "Мои заявки" (Отображаются заявки, отправленные на обработку)
-		menuMyRequest().click();
-		sleep(1500);
-//Выбираем заявку, отправленную на обработку 
-		MyRequest().click();
-		sleep(5500);
+		sleep(5000);
 	}
-	// Загрузка файла
-	public SelenideElement file() {
-		File file = new File("");
-		String fileName="\\files\\NDFL.jpg";
-		
-		SelenideElement locator = $(By.xpath("//*[@name='files[]']")).waitUntil(exist, app.timeOut);
-		locator.uploadFile(new File(file.getAbsolutePath()+fileName));
-		return locator;
-
-	}
-
 	public void DeleteContainerAddress() {
 		
 		app.tko_12().start();

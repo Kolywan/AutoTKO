@@ -36,7 +36,7 @@ public class tko_21_RejectInformation {
 	}
 
 	public SelenideElement agent() {
-		return $(By.xpath("//table[@class='v-table-table']/tbody/tr")).waitUntil(visible, app.timeOut);
+		return $(By.xpath("//div[@class='v-table-cell-wrapper' or @class='v-captiontext']")).waitUntil(visible, app.timeOut);
 	}
 
 	public SelenideElement menuProperty() {
@@ -44,7 +44,7 @@ public class tko_21_RejectInformation {
 	}
 	
 	public SelenideElement selectProperty() {
-		return $(By.xpath("//tr[@class='v-grid-row v-grid-row-has-data v-grid-row-focused' or @class='v-grid-row v-grid-row-has-data']/td[6]")).waitUntil(visible, app.timeOut);
+		return $(By.xpath("//tr[@class='v-grid-row v-grid-row-has-data v-grid-row-focused' or @class='v-grid-row v-grid-row-has-data' or @class='v-grid-row v-grid-row-focused v-grid-row-has-data' or @class='v-grid-row v-grid-row-stripe v-grid-row-has-data']/td[6]")).waitUntil(visible, app.timeOut);
 	}
 	public SelenideElement buttonChange() {
 		return $(By.xpath("(//div[@class='v-button v-widget icon v-button-icon'])[3]")).waitUntil(visible, app.timeOut);
@@ -58,7 +58,7 @@ public class tko_21_RejectInformation {
 	}
 
 	public SelenideElement buttonSend() {
-		return $(By.xpath("(//div[@class='v-button v-widget icon v-button-icon c-primary-action v-button-c-primary-action'])[3]")).waitUntil(visible, app.timeOut);
+		return $(By.xpath("//span[text()='Отправить на проверку']/../..")).waitUntil(visible, app.timeOut);
 	}
 	public SelenideElement menuMyRequest() {
 		return $(By.xpath("//div[@class='v-captiontext' and text()='Мои заявки']")).waitUntil(visible, app.timeOut);
@@ -82,7 +82,9 @@ public class tko_21_RejectInformation {
 	public SelenideElement buttonRefuse() {
 		return $(By.xpath("(//div[@class='v-button v-widget icon v-button-icon'])[2]")).waitUntil(visible, app.timeOut);
 	}
-	
+	public SelenideElement etap() {
+		return $(By.xpath("(//td[@class='v-table-cell-content'])[3]/div")).waitUntil(visible, app.timeOut);
+	}
 	public SelenideElement textBoxComment() {
 		return $(By.xpath("//div[@class='c-resizabletextarea-wrapper v-widget c-resizabletextarea-wrapper-error c-resizabletextarea-wrapper-error-error c-resizabletextarea-wrapper-required v-required v-has-width v-has-height']/textarea")).waitUntil(visible, app.timeOut);
 	}
@@ -107,7 +109,9 @@ public class tko_21_RejectInformation {
 		return $(By.xpath("//div[@class='v-button v-widget icon v-button-icon c-primary-action v-button-c-primary-action']")).waitUntil(visible, app.timeOut);
 	}
 	
-	
+	public SelenideElement buttonUpdate() {
+		return $(By.xpath("//div[@class='v-button v-widget icon v-button-icon']")).waitUntil(visible, app.timeOut);
+	}
 
 
 
@@ -159,22 +163,23 @@ public class tko_21_RejectInformation {
 		return locator;
 
 	}
-	public void loadFile() {
+	public void request() {
 
 //Кликаем “Отправить на проверку” (Всплывает информация: Запись была отправлена на обработку)
 		buttonSend().click();
 		sleep(1500);
 //Переходим на вкладку "Мои заявки" (Отображаются заявки, отправленные на обработку)
 		menuMyRequest().click();
-//Выбираем заявку, отправленную на обработку
-		MyRequest().click();
-		sleep(6000);
+		sleep(2500);
+		buttonUpdate().click();
+		sleep(2500);
+		buttonUpdate().click();
+		sleep(1500);
+		String etapText = etap().getText();
+		System.out.println(etapText);
 //Выходим из учетной записи пользователя (Открывается страница авторизации)
 		exit().click();
 		sleep(5000);
-     }
-	
-	public void startAdmin() {
 
 //Авторизация под администратором
 		login().sendKeys("testadmin");
@@ -184,15 +189,13 @@ public class tko_21_RejectInformation {
 		buttonGo().click();
 		sleep(1500);
 
-	}
-	public void request() {
-
 //Перейти на вкладку "заявки на изменение"
 		requestСhange().click();
-		sleep(7000);
-//Кликаем раздел "Особый случай"(Открываются заявки на изменение)
-		CheckingOfUnits().click();
-		sleep(8000);
+		sleep(12000);
+//Кликаем раздел того этапа, система которого присвоила заявке ранее (Открываются заявки на изменение)
+		System.out.println("2 ="+etapText);
+		$(By.xpath("//div[text()='"+etapText+"']")).click();
+		sleep(12000);
 //Кликаем по заявке два раза (Открывается окно заявка на изменение)
 		selectRequest().doubleClick();
 		sleep(5000);
@@ -204,16 +207,16 @@ public class tko_21_RejectInformation {
 		sleep(3000);
 //Кликаем “Ок” (Открыто окно “Заявка на изменение”)
 		buttonOkComment().click();
-		sleep(1000);
+		sleep(1200);
 //Кликаем “Ок” (Открывается окно “Заявки на изменение”)
 		buttonOkRequest().doubleClick();
-		sleep(5000);
+		sleep(12000);
 //Перейти в раздел "Отклонено"
 		menuRejected().click();
 		sleep(5000);
-//Открываем заявку
-		choiceRuquest().doubleClick();
-		sleep(5000);
+////Открываем заявку
+//		choiceRuquest().doubleClick();
+//		sleep(5000);
 //Выходим из учетной записи администратора (Открывается страница авторизации)	
 		exit().click();
 		sleep(5000);
@@ -242,8 +245,6 @@ public class tko_21_RejectInformation {
 		app.tko_21().startUser();
 		app.tko_21().selectAgent();
 		app.tko_21().editAgent();
-		app.tko_21().loadFile();
-		app.tko_21().startAdmin();
 		app.tko_21().request();
 		app.tko_21().startUser2();
 		

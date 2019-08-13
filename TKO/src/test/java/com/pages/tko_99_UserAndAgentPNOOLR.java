@@ -4,6 +4,8 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.sleep;
 
+import java.util.Random;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -98,8 +100,13 @@ public class tko_99_UserAndAgentPNOOLR {
 //Выбрать "Контрагенты" 
 		menuAgent().click();
 		sleep(5000);
-//Выбрать контрагента из предложенных вариантов двойным щелчком мыши
-		agent().doubleClick();
+//Случайным подбором происходит выбор контрагента из предложенных вариантов
+				Random rend = new Random();
+				int Low = 1;
+				int High = 40;
+				int x = rend.nextInt(High - Low) + Low;
+				$(By.xpath("//table[@class='v-table-table']/tbody/tr["+ x +"]")).doubleClick();
+				
 		sleep(3000);
 	}
 
@@ -138,6 +145,7 @@ public class tko_99_UserAndAgentPNOOLR {
 		searchButton().click();
 		sleep(1000);
 //Двойным щелчком выбираем найденного пользователя
+		user().click();
 		user().doubleClick();
 		sleep(1000);
 //Нажимаем кнопку "OK"

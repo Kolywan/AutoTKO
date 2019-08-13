@@ -37,7 +37,7 @@ public class tko_28_ApproveContract {
 	}
 
 	public SelenideElement agent() {
-		return $(By.xpath("//table[@class='v-table-table']/tbody/tr[2]")).waitUntil(visible, app.timeOut);
+		return $(By.xpath("//div[@class='v-table-cell-wrapper' or @class='v-captiontext']")).waitUntil(visible, app.timeOut);
 	}
 
 	public SelenideElement menuContract() {
@@ -76,7 +76,7 @@ public class tko_28_ApproveContract {
 		sleep(1000);
 //Кликаем "Сформировать доп. соглашение"(всплывает окно “выполняется операция” далее открывается окно "Просмотр договора" в нем отображается документ "Доп. соглашение")
 		buttonAddAgreement().click();
-		sleep(7000);
+		sleep(10000);
 //Нажать “Согласен” (На вкладке "Договоры" появляется доп. соглашение)
 		buttonAgree().click();
 		sleep(3000);

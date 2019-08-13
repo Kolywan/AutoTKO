@@ -159,9 +159,9 @@ public class tko_23_GetAccount {
 //Нажимаем на "Excel"(Появляется окно "Подтверждение")
 		buttonExcel().click();
 		sleep(2000);
-// Кликаем "Все строки" (Скачивается Excel файл)
-		selectAllLine().click();
-		sleep(2000);
+//// Кликаем "Все строки" (Скачивается Excel файл)
+//		selectAllLine().click();
+//		sleep(2000);
 		
 	}
 

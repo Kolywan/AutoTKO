@@ -37,11 +37,11 @@ public class tko_18_PNOOLR {
 	}
 
 	public SelenideElement agent() {
-		return $(By.xpath("//table[@class='v-table-table']/tbody/tr")).waitUntil(visible, app.timeOut);
+		return $(By.xpath("//div[@class='v-table-cell-wrapper' or @class='v-captiontext']")).waitUntil(visible, app.timeOut);
 	}
 
 	public SelenideElement menuPNOOLR() {
-		return $(By.xpath("//div[@class='v-captiontext' and text()='ПНООЛР']")).waitUntil(visible, app.timeOut);
+		return $(By.xpath("//div[text()='ПНООЛР']")).waitUntil(visible, app.timeOut);
 	}
 	
 

@@ -8,6 +8,7 @@ import static com.codeborne.selenide.Selenide.sleep;
 import java.io.File;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 import com.codeborne.selenide.SelenideElement;
@@ -36,7 +37,7 @@ public class tko_10_ContainerAddress {
 	}
 
 	public SelenideElement agent() {
-		return $(By.xpath("//table[@class='v-table-table']/tbody/tr")).waitUntil(visible, app.timeOut);
+		return $(By.xpath("//div[@class='v-table-cell-wrapper' or @class='v-captiontext']")).waitUntil(visible, app.timeOut);
 	}
 
 	public SelenideElement menuContainer() {
@@ -158,89 +159,14 @@ public class tko_10_ContainerAddress {
 		sleep(5000);
 		}
 			
-			public void startAdmin() {
-
-		//Авторизация под администратором
-				login().sendKeys("testadmin");
-				sleep(1000);
-				password().sendKeys("1");
-				sleep(1000);
-				buttonGo().click();
-				sleep(1500);
-
-			}
-			public void request() {
-
-		//Перейти на вкладку "заявки на изменение"
-				requestСhange().click();
-				sleep(7000);
-		//Кликаем раздел "Контейнерные площадки"(Открываются заявки на изменение)
-				Container().click();
-				sleep(8000);
-		//Кликаем по заявке два раза (Открывается окно заявка на изменение)
-				selectRequest().doubleClick();
-				sleep(5000);
-		//Кликаем “Согласовать” (Всплывает окно "комментарий")
-				buttonApprove().click();
-				sleep(3000);
-		//Вписываем комментарий 
-				textBoxComment().sendKeys("Согласованно");
-				sleep(3000);
-		//Кликаем “Ок” (Открыто окно “Заявка на изменение”)
-				buttonOkComment().click();
-				sleep(1000);
-		//Кликаем “Ок” (Открывается окно “Заявки на изменение”)
-				buttonOkRequest().doubleClick();
-				sleep(5000);
-		//Перейти в раздел "Принято"
-				menuAccepted().click();
-				sleep(8000);
-		//Открываем заявку
-//				choiceRuquest().doubleClick();
-//				sleep(5000);
-		//Выходим из учетной записи администратора (Открывается страница авторизации)	
-				exit().click();
-				sleep(5000);
-			}
-			public void startUser2() {
-
-		//Авторизоваться под пользователем 
-				login().sendKeys("6783");
-				sleep(1000);
-				password().sendKeys("6783");
-				sleep(1000);
-				buttonGo().click();
-				sleep(1500);
-		//Двойным щелчком мыши заходим в контрагента (Открывается окно "Карточка л/с")
-				agent().doubleClick();
-				sleep(1000);
-		//Переходим на вкладку "Мои заявки" (Отображаются заявки)
-				menuMyRequest().click();
-		//Кликаем по заявке
-				MyRequest().click();
-				sleep(6000);
-
 			
-	}
-	// Загрузка файла
-	public SelenideElement file() {
-		File file = new File("");
-		String fileName="\\files\\NDFL.jpg";
-		
-		SelenideElement locator = $(By.xpath("//*[@name='files[]']")).waitUntil(exist, app.timeOut);
-		locator.uploadFile(new File(file.getAbsolutePath()+fileName));
-		return locator;
-
-	}
 
 	public void AddProperty() {
 		
 		app.tko_10().start();
 		app.tko_10().selectAgent();
 		app.tko_10().editAgent();
-		app.tko_10().startAdmin();
-		app.tko_10().request();
-		app.tko_10().startUser2();
+
 
 
 

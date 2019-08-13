@@ -49,13 +49,14 @@ import com.pages.tko_5_AddProperty;
 import com.pages.tko_6_AddPropertyRent;
 import com.pages.tko_7_ChangeInformationUser;
 import com.pages.tko_8_RequestDeleteON;
+import com.pages.tko_97_addONWithoutChecking;
+import com.pages.tko_98_DeleteAgent;
 import com.pages.tko_9_AddRent;
 
 public class ApplicationManager {
 
 	public int timeOut = 5000;
-    
-	
+   	
 	public int tt= 5000;
 	
 	protected static Logs logs;
@@ -64,6 +65,8 @@ public class ApplicationManager {
 	// ##########################
 	// Pages
 	protected tko_99_UserAndAgentPNOOLR tko_99;
+	protected tko_98_DeleteAgent tko_98;
+	protected tko_97_addONWithoutChecking tko_97;
 	protected tko_1_CreateAgent tko_1;
 	protected tko_2_UserAndAgent tko_2;
 	protected tko_3_CreateUser tko_3;
@@ -282,6 +285,14 @@ public class ApplicationManager {
 	// ##############################
 	public tko_30_AccountRent tko_30() {
 		return tko_30 = new tko_30_AccountRent();
+	}
+	// ##############################
+	public tko_97_addONWithoutChecking tko_97() {
+		return tko_97 = new tko_97_addONWithoutChecking();
+	}
+	// ##############################
+	public tko_98_DeleteAgent tko_98() {
+		return tko_98 = new tko_98_DeleteAgent();
 	}
 	// ##############################
 	public tko_99_UserAndAgentPNOOLR tko_99() {

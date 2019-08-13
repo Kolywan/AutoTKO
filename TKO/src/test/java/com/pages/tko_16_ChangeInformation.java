@@ -8,6 +8,7 @@ import static com.codeborne.selenide.Selenide.sleep;
 import java.io.File;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 import com.codeborne.selenide.SelenideElement;
@@ -36,7 +37,7 @@ public class tko_16_ChangeInformation {
 	}
 
 	public SelenideElement agent() {
-		return $(By.xpath("//table[@class='v-table-table']/tbody/tr")).waitUntil(visible, app.timeOut);
+		return $(By.xpath("//div[@class='v-table-cell-wrapper' or @class='v-captiontext']")).waitUntil(visible, app.timeOut);
 	}
 
 	public SelenideElement menuProperty() {
@@ -44,7 +45,7 @@ public class tko_16_ChangeInformation {
 	}
 	
 	public SelenideElement selectProperty() {
-		return $(By.xpath("//tr[@class='v-grid-row v-grid-row-has-data v-grid-row-focused' or @class='v-grid-row v-grid-row-has-data']/td[6]")).waitUntil(visible, app.timeOut);
+		return $(By.xpath("//tr[@class='v-grid-row v-grid-row-has-data v-grid-row-focused' or @class='v-grid-row v-grid-row-has-data' or @class='v-grid-row v-grid-row-focused v-grid-row-has-data' or @class='v-grid-row v-grid-row-stripe v-grid-row-has-data']/td[6]")).waitUntil(visible, app.timeOut);
 	}
 	public SelenideElement buttonChange() {
 		return $(By.xpath("(//div[@class='v-button v-widget icon v-button-icon'])[3]")).waitUntil(visible, app.timeOut);
@@ -58,10 +59,13 @@ public class tko_16_ChangeInformation {
 	}
 
 	public SelenideElement buttonSend() {
-		return $(By.xpath("(//div[@class='v-button v-widget icon v-button-icon c-primary-action v-button-c-primary-action'])[3]")).waitUntil(visible, app.timeOut);
+		return $(By.xpath("//span[text()='Отправить на проверку']/../..")).waitUntil(visible, app.timeOut);
 	}
 	public SelenideElement menuMyRequest() {
 		return $(By.xpath("//div[@class='v-captiontext' and text()='Мои заявки']")).waitUntil(visible, app.timeOut);
+	}
+	public SelenideElement etap() {
+		return $(By.xpath("(//td[@class='v-table-cell-content'])[3]/div")).waitUntil(visible, app.timeOut);
 	}
 	public SelenideElement MyRequest() {
 		return $(By.xpath("//table[@class='v-table-table']/tbody/tr")).waitUntil(visible, app.timeOut);
@@ -106,7 +110,9 @@ public class tko_16_ChangeInformation {
 	public SelenideElement buttonOk() {
 		return $(By.xpath("//div[@class='v-button v-widget icon v-button-icon c-primary-action v-button-c-primary-action']")).waitUntil(visible, app.timeOut);
 	}
-	
+	public SelenideElement buttonUpdate() {
+		return $(By.xpath("//div[@class='v-button v-widget icon v-button-icon']")).waitUntil(visible, app.timeOut);
+	}
 	
 
 
@@ -166,16 +172,28 @@ public class tko_16_ChangeInformation {
 		sleep(1500);
 //Переходим на вкладку "Мои заявки" (Отображаются заявки, отправленные на обработку)
 		menuMyRequest().click();
-//Выбираем заявку, отправленную на обработку
-		MyRequest().click();
 		sleep(6000);
+		buttonUpdate().click();
+		sleep(1500);
+		buttonUpdate().click();
+		sleep(1500);
+		buttonUpdate().click();
+		sleep(2500);
+
+     }
+	public String et() {
+		String etapText = etap().getText();
+		System.out.println(etapText);
+//		etap().shouldNotHave(text("Верификация"));
+//		etap().shouldNotHave(text(etapText),text("Верификация"));
+//		etap().shouldNot(text(etapText),text("Верификация"));
+		return etapText;
+	}
+	public void request() {
+		String res=et();
 //Выходим из учетной записи пользователя (Открывается страница авторизации)
 		exit().click();
 		sleep(5000);
-     }
-	
-	public void startAdmin() {
-
 //Авторизация под администратором
 		login().sendKeys("testadmin");
 		sleep(1000);
@@ -184,14 +202,12 @@ public class tko_16_ChangeInformation {
 		buttonGo().click();
 		sleep(1500);
 
-	}
-	public void request() {
-
 //Перейти на вкладку "заявки на изменение"
 		requestСhange().click();
 		sleep(7000);
-//Кликаем раздел "Особый случай"(Открываются заявки на изменение)
-		CheckingOfUnits().click();
+//Кликаем раздел того этапа, система которого присвоила заявке ранее (Открываются заявки на изменение)
+		System.out.println("2 ="+res);
+		$(By.xpath("//div[text()='"+res+"']")).click();
 		sleep(8000);
 //Кликаем по заявке два раза (Открывается окно заявка на изменение)
 		selectRequest().doubleClick();
@@ -202,18 +218,20 @@ public class tko_16_ChangeInformation {
 //Вписываем комментарий 
 		textBoxComment().sendKeys("Изменение возможно");
 		sleep(3000);
+		textBoxComment().sendKeys(Keys.TAB);
+		sleep(1000);
 //Кликаем “Ок” (Открыто окно “Заявка на изменение”)
-		buttonOkComment().click();
+		buttonOkComment().sendKeys(Keys.ENTER);
 		sleep(1000);
 //Кликаем “Ок” (Открывается окно “Заявки на изменение”)
 		buttonOkRequest().doubleClick();
 		sleep(5000);
-//Перейти в раздел "Принято"
-		menuAccepted().click();
-		sleep(5000);
-//Открываем заявку
-		choiceRuquest().doubleClick();
-		sleep(5000);
+////Перейти в раздел "Принято"
+//		menuAccepted().click();
+//		sleep(5000);
+////Открываем заявку
+//		choiceRuquest().doubleClick();
+//		sleep(5000);
 //Выходим из учетной записи администратора (Открывается страница авторизации)	
 		exit().click();
 		sleep(5000);
@@ -243,7 +261,6 @@ public class tko_16_ChangeInformation {
 		app.tko_16().selectAgent();
 		app.tko_16().editAgent();
 		app.tko_16().loadFile();
-		app.tko_16().startAdmin();
 		app.tko_16().request();
 		app.tko_16().startUser2();
 		

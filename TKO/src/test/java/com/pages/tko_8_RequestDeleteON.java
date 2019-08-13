@@ -33,7 +33,7 @@ public class tko_8_RequestDeleteON {
 	}
 
 	public SelenideElement agent() {
-		return $(By.xpath("//table[@class='v-table-table']/tbody/tr")).waitUntil(visible, app.timeOut);
+		return $(By.xpath("//div[@class='v-table-cell-wrapper' or @class='v-captiontext']")).waitUntil(visible, app.timeOut);
 	}
 
 	public SelenideElement menuProperty() {
@@ -41,7 +41,7 @@ public class tko_8_RequestDeleteON {
 	}
 	
 	public SelenideElement selectProperty() {
-		return $(By.xpath("//tr[@class='v-grid-row v-grid-row-has-data v-grid-row-focused' or @class='v-grid-row v-grid-row-has-data']/td[6]")).waitUntil(visible, app.timeOut);
+		return $(By.xpath("//tr[@class='v-grid-row v-grid-row-has-data v-grid-row-focused' or @class='v-grid-row v-grid-row-has-data' or @class='v-grid-row v-grid-row-focused v-grid-row-has-data']/td[6]")).waitUntil(visible, app.timeOut);
 	}
 	public SelenideElement buttonDelete() {
 		return $(By.xpath("(//div[@class='v-button v-widget icon v-button-icon'])[4]")).waitUntil(visible, app.timeOut);

@@ -36,7 +36,7 @@ public class tko_22_RejectProperty {
 	}
 
 	public SelenideElement agent() {
-		return $(By.xpath("//table[@class='v-table-table']/tbody/tr")).waitUntil(visible, app.timeOut);
+		return $(By.xpath("//div[@class='v-table-cell-wrapper' or @class='v-captiontext']")).waitUntil(visible, app.timeOut);
 	}
 
 	public SelenideElement menuProperty() {
@@ -44,7 +44,7 @@ public class tko_22_RejectProperty {
 	}
 	
 	public SelenideElement selectProperty() {
-		return $(By.xpath("//tr[@class='v-grid-row v-grid-row-has-data v-grid-row-focused' or @class='v-grid-row v-grid-row-has-data']/td[6]")).waitUntil(visible, app.timeOut);
+		return $(By.xpath("//tr[@class='v-grid-row v-grid-row-has-data v-grid-row-focused' or @class='v-grid-row v-grid-row-has-data' or @class='v-grid-row v-grid-row-focused v-grid-row-has-data' or @class='v-grid-row v-grid-row-stripe v-grid-row-has-data']/td[6]")).waitUntil(visible, app.timeOut);
 	}
 	public SelenideElement buttonReject() {
 		return $(By.xpath("(//div[@class='v-button v-widget icon v-button-icon'])[4]")).waitUntil(visible, app.timeOut);
@@ -111,9 +111,13 @@ public class tko_22_RejectProperty {
 	public SelenideElement buttonOk() {
 		return $(By.xpath("//div[@class='v-button v-widget icon v-button-icon c-primary-action v-button-c-primary-action']")).waitUntil(visible, app.timeOut);
 	}
+	public SelenideElement buttonUpdate() {
+		return $(By.xpath("//div[@class='v-button v-widget icon v-button-icon']")).waitUntil(visible, app.timeOut);
+	}
 	
-	
-
+	public SelenideElement etap() {
+		return $(By.xpath("(//td[@class='v-table-cell-content'])[3]/div")).waitUntil(visible, app.timeOut);
+	}
 
 
 
@@ -163,19 +167,19 @@ public class tko_22_RejectProperty {
 		return locator;
 
 	}
-	public void loadFile() {
+	public void request() {
 
 //Переходим на вкладку "Мои заявки" (Отображаются заявки, отправленные на обработку)
 		menuMyRequest().click();
-//Выбираем заявку, отправленную на обработку
-		MyRequest().click();
-		sleep(6000);
+		buttonUpdate().click();
+		sleep(2500);
+		buttonUpdate().click();
+		sleep(1500);
+		String etapText = etap().getText();
+		System.out.println(etapText);
 //Выходим из учетной записи пользователя (Открывается страница авторизации)
 		exit().click();
 		sleep(5000);
-     }
-	
-	public void startAdmin() {
 
 //Авторизация под администратором
 		login().sendKeys("testadmin");
@@ -185,36 +189,34 @@ public class tko_22_RejectProperty {
 		buttonGo().click();
 		sleep(1500);
 
-	}
-	public void request() {
-
 //Перейти на вкладку "заявки на изменение"
 		requestСhange().click();
-		sleep(7000);
-//Кликаем раздел "Особый случай"(Открываются заявки на изменение)
-		CheckingOfUnits().click();
-		sleep(8000);
+		sleep(12000);
+//Кликаем раздел того этапа, система которого присвоила заявке ранее (Открываются заявки на изменение)
+		System.out.println("2 ="+etapText);
+		$(By.xpath("//div[text()='"+etapText+"']")).click();
+		sleep(12000);
 //Кликаем по заявке два раза (Открывается окно заявка на изменение)
 		selectRequest().doubleClick();
 		sleep(5000);
 //Кликаем “Отказать” (Всплывает окно "комментарий")
 		buttonRefuse().click();
-		sleep(3000);
+		sleep(5000);
 //Вписываем комментарий 
 		textBoxComment().sendKeys("Изменение не возможно");
 		sleep(3000);
 //Кликаем “Ок” (Открыто окно “Заявка на изменение”)
 		buttonOkComment().click();
-		sleep(1000);
+		sleep(1200);
 //Кликаем “Ок” (Открывается окно “Заявки на изменение”)
 		buttonOkRequest().doubleClick();
-		sleep(5000);
-//Перейти в раздел "Принято"
+		sleep(12000);
+//Перейти в раздел "Отклонено"
 		menuRejected().click();
 		sleep(5000);
-//Открываем заявку
-		choiceRuquest().doubleClick();
-		sleep(5000);
+////Открываем заявку
+//		choiceRuquest().doubleClick();
+//		sleep(5000);
 //Выходим из учетной записи администратора (Открывается страница авторизации)	
 		exit().click();
 		sleep(5000);
@@ -243,8 +245,6 @@ public class tko_22_RejectProperty {
 		app.tko_22().startUser();
 		app.tko_22().selectAgent();
 
-		app.tko_22().loadFile();
-		app.tko_22().startAdmin();
 		app.tko_22().request();
 		app.tko_22().startUser2();
 		

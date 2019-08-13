@@ -10,6 +10,56 @@
     <parameter name="user" value="login"/>
     <parameter name="url" value="http://tko-qa.groupstp.ru/app/#!/"/>
     <classes>
+      <class name="com.tests.smoke.Smoke_tko_26">
+        <methods>
+          <include name="cleanUp"/>
+          <include name="result"/>
+          <include name="smoke1"/>
+          <include name="startVideo"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.tests.smoke.Smoke_tko_26 -->
+      <class name="com.tests.smoke.Smoke_tko_11">
+        <methods>
+          <include name="cleanUp"/>
+          <include name="smoke1"/>
+          <include name="result"/>
+          <include name="startVideo"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.tests.smoke.Smoke_tko_11 -->
+      <class name="com.tests.smoke.Smoke_tko_14">
+        <methods>
+          <include name="smoke1"/>
+          <include name="cleanUp"/>
+          <include name="result"/>
+          <include name="startVideo"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.tests.smoke.Smoke_tko_14 -->
+      <class name="com.tests.smoke.Smoke_tko_22">
+        <methods>
+          <include name="cleanUp"/>
+          <include name="smoke1"/>
+          <include name="result"/>
+          <include name="startVideo"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.tests.smoke.Smoke_tko_22 -->
+      <class name="com.tests.smoke.Smoke_tko_19">
+        <methods>
+          <include name="cleanUp"/>
+          <include name="result"/>
+          <include name="startVideo"/>
+          <include name="smoke1"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.tests.smoke.Smoke_tko_19 -->
       <class name="com.tests.smoke.Smoke_tko_30">
         <methods>
           <include name="cleanUp"/>
@@ -20,6 +70,16 @@
           <include name="tearDown"/>
         </methods>
       </class> <!-- com.tests.smoke.Smoke_tko_30 -->
+      <class name="com.tests.smoke.Smoke_tko_20">
+        <methods>
+          <include name="cleanUp"/>
+          <include name="result"/>
+          <include name="startVideo"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="smoke1"/>
+        </methods>
+      </class> <!-- com.tests.smoke.Smoke_tko_20 -->
     </classes>
   </test> <!-- SMOKE TESTS(failed) -->
 </suite> <!-- Failed suite [SMOKE TESTS TKO] -->

@@ -6,8 +6,10 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.sleep;
 
 import java.io.File;
+import java.util.Random;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 import com.codeborne.selenide.SelenideElement;
@@ -36,7 +38,7 @@ public class tko_14_RejectRequest {
 	}
 
 	public SelenideElement agent() {
-		return $(By.xpath("//table[@class='v-table-table']/tbody/tr")).waitUntil(visible, app.timeOut);
+		return $(By.xpath("//div[@class='v-table-cell-wrapper' or @class='v-captiontext']")).waitUntil(visible, app.timeOut);
 	}
 
 	public SelenideElement menuProperty() {
@@ -44,7 +46,7 @@ public class tko_14_RejectRequest {
 	}
 
 	public SelenideElement buttonAdd() {
-		return $(By.xpath("//div[@class='v-button v-widget icon v-button-icon c-primary-action v-button-c-primary-action']")).waitUntil(visible, app.timeOut);
+		return $(By.xpath("//span[text()='Добавить']/../..")).waitUntil(visible, app.timeOut);
 	}
 	public SelenideElement boxMax() {
 		return $(By.xpath("//div[@class='v-window-maximizebox']")).waitUntil(visible, app.timeOut);
@@ -89,10 +91,13 @@ public class tko_14_RejectRequest {
 		return $(By.xpath("//input[@class='v-textfield v-widget v-textfield-error v-textfield-error-error v-textfield-required v-required c-empty-value']")).waitUntil(visible, app.timeOut);
 	}
 	public SelenideElement buttonSend() {
-		return $(By.xpath("(//div[@class='v-button v-widget icon v-button-icon c-primary-action v-button-c-primary-action'])[3]")).waitUntil(visible, app.timeOut);
+		return $(By.xpath("//span[text()='Отправить на проверку']/../..")).waitUntil(visible, app.timeOut);
 	}
 	public SelenideElement menuMyRequest() {
 		return $(By.xpath("//div[@class='v-captiontext' and text()='Мои заявки']")).waitUntil(visible, app.timeOut);
+	}
+	public SelenideElement buttonUpdate() {
+		return $(By.xpath("//div[@class='v-button v-widget icon v-button-icon']")).waitUntil(visible, app.timeOut);
 	}
 	public SelenideElement MyRequest() {
 		return $(By.xpath("//table[@class='v-table-table']/tbody/tr")).waitUntil(visible, app.timeOut);
@@ -138,22 +143,62 @@ public class tko_14_RejectRequest {
 		return $(By.xpath("//div[@class='v-button v-widget icon v-button-icon c-primary-action v-button-c-primary-action']")).waitUntil(visible, app.timeOut);
 	}
 	
-	
+	public SelenideElement menuApp() {
+		return $(By.xpath("//div[@class='v-menubar v-widget c-main-menu v-menubar-c-main-menu v-has-width']/span[3]")).waitUntil(visible, app.timeOut);
+	}
 
+	public SelenideElement menuON() {
+		return $(By.xpath("//div[@class='v-menubar-submenu v-widget c-main-menu v-menubar-submenu-c-main-menu v-has-width']/span[2]")).waitUntil(visible, app.timeOut);
+	}
 
+	public SelenideElement ON() {
+		return $(By.xpath("//div[@class='v-menubar-submenu v-widget c-main-menu v-menubar-submenu-c-main-menu v-has-width v-menubar-submenu-has-icons']/span[1]")).waitUntil(visible, app.timeOut);
+	}
+	public SelenideElement etap() {
+		return $(By.xpath("(//td[@class='v-table-cell-content'])[3]/div")).waitUntil(visible, app.timeOut);
+	}
 
+	public void getKadastrNumber() {
+// Авторизация под администратором
+		login().sendKeys("testadmin");
+		sleep(1000);
+		password().sendKeys("1");
+		sleep(1000);
+		buttonGo().click();
+		sleep(1500);
+//Зайти в "Приложение" 
+		menuApp().click();
+		sleep(1000);
+//перейти "Объекты недвижимости" 
+		menuON().click();
+		sleep(1000);
+//Выбрать "Объекты недвижимости" 
+		ON().click();
+		
+		sleep(5000);
+	}
+//Случайно выбираем адрес из списка
+//Сохраняем кадастровый номер
+	public String KadasN() {
+		Random random = new Random();
+		int n = 10 + random.nextInt(46 - 1);
+		System.out.println(n);
+		String number = $(By.xpath("//table[@class='v-table-table']/tbody/tr["+n+"]/td[4]/div")).getText();
+
+		return number;
+	}
 
 	public void startUser() {
-//Авторизоваться под пользователем
+		String Num=KadasN();
+		System.out.println(Num);
+//Авторизоваться под пользователем 
+		exit().click();
 		login().sendKeys("6783");
 		sleep(1000);
 		password().sendKeys("6783");
 		sleep(1000);
 		buttonGo().click();
 		sleep(1500);
-
-	}
-	public void selectAgent() {
 
 //Двойным щелчком мыши заходим в контрагента (Открывается окно "Карточка л/с")
 		agent().doubleClick();
@@ -167,29 +212,26 @@ public class tko_14_RejectRequest {
 //Разворачиваем окно на весь экран
 		boxMax().click();
 		sleep(1000);
-	}
-
-	public void editAgent() {
-
+		
 //Указываем кадастровый номер
-		TextBoxKadasNumber().sendKeys("38:36:000021:27104");
+		System.out.println(Num);
+		TextBoxKadasNumber().sendKeys(Num);
 		sleep(1000);
-//Кликаем "Найти" (Появляются доп. поля)
+//Кликаем "Найти"(Появляются доп. поля)
 		buttonFind().click();
 		sleep(1000);
 //Открываем меню “Категория объекта” 
 		menuObject().click();
 		sleep(1000);
 //Выбираем “Категория объекта” 
-		selectObject().click();
+		Random r = new Random();
+		int Low = 1;
+		int High = 10;
+		int Result = r.nextInt(High-Low) + Low;
+		
+		$(By.xpath("(//td[@class='gwt-MenuItem'])["+Result+"]")).click();
 		sleep(1000);
-		
-		
-//		infoText().click();
-//		sleep(1000);
-//		menuUnits().sendKeys("25");
-//		sleep(1000);
-		
+	
 		
 //Открываем меню “Тип владения” 
 		menuPossessions().click();
@@ -211,29 +253,34 @@ public class tko_14_RejectRequest {
 	}
 	public void loadFile() {
 
-//		boxFile().doubleClick();
-//		sleep(1000);
-//		file();
-//		sleep(1500);
-//		saveFile().click();
-//		sleep(1500);
-//		unitsInDocument().sendKeys("10");
-//		sleep(1000);
-
 //Кликаем “Отправить на проверку” (Система возвращается в окно "Карточка л/с" )
 		buttonSend().click();
 		sleep(1500);
 //Переходим на вкладку "Мои заявки" (Отображаются заявки, отправленные на обработку)
 		menuMyRequest().click();
-//Выбираем заявку, отправленную на обработку 
-		MyRequest().click();
-		sleep(6000);
+		sleep(3000);
+		buttonUpdate().click();
+		sleep(1500);
+		buttonUpdate().click();
+		sleep(1500);
+		buttonUpdate().click();
+		sleep(2500);
+     }
+	
+	public String et() {
+		String etapText = etap().getText();
+		System.out.println(etapText);
+//		etap().shouldNotHave(text("Верификация"));
+//		etap().shouldNotHave(text(etapText),text("Верификация"));
+//		etap().shouldNot(text(etapText),text("Верификация"));
+		return etapText;
+	}
+	
+	public void startAdmin() {
+		String res=et();
 //Выходим из учетной записи пользователя (Открывается страница авторизации)
 		exit().click();
 		sleep(5000);
-     }
-	
-	public void startAdmin() {
 //Авторизация под администратором 
 		login().sendKeys("testadmin");
 		sleep(1000);
@@ -241,15 +288,17 @@ public class tko_14_RejectRequest {
 		sleep(1000);
 		buttonGo().click();
 		sleep(1500);
-
-	}
-	public void request() {
-
 //Перейти на вкладку "заявки на изменение"
 		requestСhange().click();
-		sleep(7000);
-//Кликаем раздел "Особый случай"(Открываются заявки на изменение)
-		CheckingOfUnits().click();
+		sleep(10000);
+//Кликаем раздел того этапа, система которого присвоила заявке ранее (Открываются заявки на изменение)
+		
+		System.out.println("2 ="+res);
+		
+		$(By.xpath("//div[text()='"+res+"']")).click();
+		
+		
+		
 		sleep(8000);
 //Кликаем по заявке два раза (Открывается окно заявка на изменение)
 		selectRequest().doubleClick();
@@ -261,17 +310,17 @@ public class tko_14_RejectRequest {
 		textBoxComment().sendKeys("Не соответствует действительности");
 		sleep(3000);
 //Кликаем “Ок” (Открыто окно “Заявка на изменение”)
-		buttonOkComment().click();
+		buttonOkComment().sendKeys(Keys.ENTER);
 		sleep(1000);
 //Кликаем “Ок” (Открывается окно “Заявки на изменение”)
 		buttonOkRequest().doubleClick();
 		sleep(5000);
-//Перейти в раздел "Отклонено"
-		menuReject().click();
-		sleep(5000);
-//Открываем заявку 
-		choiceRuquest().doubleClick();
-		sleep(5000);
+////Перейти в раздел "Отклонено"
+//		menuReject().click();
+//		sleep(9000);
+////Открываем заявку 
+//		choiceRuquest().doubleClick();
+//		sleep(5000);
 //Выходим из учетной записи администратора (Открывается страница авторизации)
 		exit().click();
 		sleep(5000);
@@ -296,12 +345,11 @@ public class tko_14_RejectRequest {
 	}
 	public void RejectRequest() {
 		
+		app.tko_14().getKadastrNumber();
+		app.tko_14().KadasN();
 		app.tko_14().startUser();
-		app.tko_14().selectAgent();
-		app.tko_14().editAgent();
 		app.tko_14().loadFile();
 		app.tko_14().startAdmin();
-		app.tko_14().request();
 		app.tko_14().startUser2();
 		
 		

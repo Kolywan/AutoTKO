@@ -9,6 +9,7 @@ import java.io.File;
 import java.util.Random;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 import com.codeborne.selenide.SelenideElement;
@@ -37,7 +38,7 @@ public class tko_13_ApproveRequest {
 	}
 
 	public SelenideElement agent() {
-		return $(By.xpath("//table[@class='v-table-table']/tbody/tr")).waitUntil(visible, app.timeOut);
+		return $(By.xpath("//div[@class='v-table-cell-wrapper' or @class='v-captiontext']")).waitUntil(visible, app.timeOut);
 	}
 
 	public SelenideElement menuProperty() {
@@ -45,7 +46,7 @@ public class tko_13_ApproveRequest {
 	}
 
 	public SelenideElement buttonAdd() {
-		return $(By.xpath("//div[@class='v-button v-widget icon v-button-icon c-primary-action v-button-c-primary-action']")).waitUntil(visible, app.timeOut);
+		return $(By.xpath("//span[text()='Добавить']/../..")).waitUntil(visible, app.timeOut);
 	}
 	public SelenideElement boxMax() {
 		return $(By.xpath("//div[@class='v-window-maximizebox']")).waitUntil(visible, app.timeOut);
@@ -90,7 +91,7 @@ public class tko_13_ApproveRequest {
 		return $(By.xpath("//input[@class='v-textfield v-widget v-textfield-error v-textfield-error-error v-textfield-required v-required c-empty-value']")).waitUntil(visible, app.timeOut);
 	}
 	public SelenideElement buttonSend() {
-		return $(By.xpath("(//div[@class='v-button v-widget icon v-button-icon c-primary-action v-button-c-primary-action'])[3]")).waitUntil(visible, app.timeOut);
+		return $(By.xpath("//span[text()='Отправить на проверку']/../..")).waitUntil(visible, app.timeOut);
 	}
 	public SelenideElement menuMyRequest() {
 		return $(By.xpath("//div[@class='v-captiontext' and text()='Мои заявки']")).waitUntil(visible, app.timeOut);
@@ -275,6 +276,10 @@ public class tko_13_ApproveRequest {
 		menuMyRequest().click();
 		sleep(3000);
 		buttonUpdate().click();
+		sleep(1500);
+		buttonUpdate().click();
+		sleep(1500);
+		buttonUpdate().click();
 		sleep(2500);
      }
 	
@@ -320,12 +325,14 @@ public class tko_13_ApproveRequest {
 //Вписываем комментарий (Согласованно)
 		textBoxComment().sendKeys("Согласованно");
 		sleep(3000);
+		textBoxComment().sendKeys(Keys.TAB);
+		sleep(1000);
 //Кликаем “Ок” (Открыто окно “Заявка на изменение”)
-		buttonOkComment().click();
+		buttonOkComment().sendKeys(Keys.ENTER);
 		sleep(1000);
 //Кликаем “Ок” (Открывается окно “Заявки на изменение”)
 		buttonOkRequest().doubleClick();
-		sleep(8000);
+		sleep(10000);
 //Перейти в раздел "Принято"
 		menuAccepted().click();
 		sleep(8000);

@@ -36,7 +36,7 @@ public class tko_9_AddRent {
 	}
 
 	public SelenideElement agent() {
-		return $(By.xpath("//table[@class='v-table-table']/tbody/tr")).waitUntil(visible, app.timeOut);
+		return $(By.xpath("//div[@class='v-table-cell-wrapper' or @class='v-captiontext']")).waitUntil(visible, app.timeOut);
 	}
 
 	public SelenideElement menuRent() {
@@ -45,7 +45,7 @@ public class tko_9_AddRent {
 
 
 	public SelenideElement selectON() {
-		return $(By.xpath("//tbody[@class='v-grid-body']/tr[2]")).waitUntil(visible, app.timeOut);
+		return $(By.xpath("//tbody[@class='v-grid-body']/tr")).waitUntil(visible, app.timeOut);
 	}
 	public SelenideElement buttonAdd() {
 		return $(By.xpath("//div[@class='v-button v-widget icon v-button-icon c-primary-action v-button-c-primary-action']")).waitUntil(visible, app.timeOut);

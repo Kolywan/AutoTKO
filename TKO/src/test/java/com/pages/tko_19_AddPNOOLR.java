@@ -37,7 +37,7 @@ public class tko_19_AddPNOOLR {
 	}
 
 	public SelenideElement agent() {
-		return $(By.xpath("//table[@class='v-table-table']/tbody/tr")).waitUntil(visible, app.timeOut);
+		return $(By.xpath("//div[@class='v-table-cell-wrapper' or @class='v-captiontext']")).waitUntil(visible, app.timeOut);
 	}
 
 	public SelenideElement menuPNOOLR() {
@@ -203,10 +203,10 @@ public class tko_19_AddPNOOLR {
 
 //Перейти на вкладку "заявки на изменение"
 		requestСhange().click();
-		sleep(7000);
+		sleep(12000);
 //Кликаем раздел "Особый случай"(Открываются заявки на изменение)
 		CheckingOfUnits().click();
-		sleep(8000);
+		sleep(12000);
 //Кликаем по заявке два раза (Открывается окно заявка на изменение)
 		selectRequest().doubleClick();
 		sleep(5000);
@@ -224,7 +224,7 @@ public class tko_19_AddPNOOLR {
 		sleep(5000);
 //Перейти в раздел "Принято"
 		menuAccepted().click();
-		sleep(5000);
+		sleep(12000);
 //Открываем заявку
 		choiceRuquest().doubleClick();
 		sleep(5000);

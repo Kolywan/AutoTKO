@@ -81,13 +81,13 @@ public class tko_3_CreateUser {
 		buttonCreate().click();
 		sleep(3000);
 //Заполняем поле “Наименование”
-		textBoxLogin().sendKeys("986532");
+		textBoxLogin().sendKeys("6783");
 		sleep(1000);
 //Заполняем поле “Юридический адрес”
-		textBoxPassword().sendKeys("986532");
+		textBoxPassword().sendKeys("6783");
 		sleep(1000);
 //Заполняем поле “ИНН”
-		textBoxConfirmPassword().sendKeys("986532");
+		textBoxConfirmPassword().sendKeys("6783");
 		sleep(1000);
 //Нажимаем кнопку "OK"
 		buttonOk().click();
