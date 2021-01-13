@@ -45,6 +45,8 @@ import com.pages.tko_2_UserAndAgent;
 import com.pages.tko_30_AccountRent;
 import com.pages.tko_31_ExportApplication;
 import com.pages.tko_33_AddOnNON;
+import com.pages.tko_35_AddOnResedent;
+import com.pages.tko_37_addONMultAdmin;
 import com.pages.tko_3_CreateUser;
 import com.pages.tko_4_AddDocument;
 import com.pages.tko_5_AddProperty;
@@ -104,6 +106,8 @@ public class ApplicationManager {
 	protected tko_30_AccountRent tko_30;
 	protected tko_31_ExportApplication tko_31;
 	protected tko_33_AddOnNON tko_33;
+	protected tko_35_AddOnResedent tko_35;
+	protected tko_37_addONMultAdmin tko_37;
 	protected DelEmails deleteMails;
 	protected GetEmail getEmail;
 
@@ -322,6 +326,15 @@ public class ApplicationManager {
 	public tko_33_AddOnNON tko_33() {
 		return tko_33 = new tko_33_AddOnNON();
 	}
+	// ##############################
+	public tko_35_AddOnResedent tko_35() {
+		return tko_35 = new tko_35_AddOnResedent();
+	}
+	// ##############################
+	public tko_37_addONMultAdmin tko_37() {
+		return tko_37 = new tko_37_addONMultAdmin();
+	}
+	
 	// ##############################
 	public void switchLoging() throws SecurityException, IOException {
 		// set logger Level for RemoteWebDriver
