@@ -163,90 +163,90 @@ public class tko_21_RejectInformation {
 		return locator;
 
 	}
-	public void request() {
-
-//Кликаем “Отправить на проверку” (Всплывает информация: Запись была отправлена на обработку)
-		buttonSend().click();
-		sleep(1500);
-//Переходим на вкладку "Мои заявки" (Отображаются заявки, отправленные на обработку)
-		menuMyRequest().click();
-		sleep(2500);
-		buttonUpdate().click();
-		sleep(2500);
-		buttonUpdate().click();
-		sleep(1500);
-		String etapText = etap().getText();
-		System.out.println(etapText);
-//Выходим из учетной записи пользователя (Открывается страница авторизации)
-		exit().click();
-		sleep(5000);
-
-//Авторизация под администратором
-		login().sendKeys("testadmin");
-		sleep(1000);
-		password().sendKeys("1");
-		sleep(1000);
-		buttonGo().click();
-		sleep(1500);
-
-//Перейти на вкладку "заявки на изменение"
-		requestСhange().click();
-		sleep(12000);
-//Кликаем раздел того этапа, система которого присвоила заявке ранее (Открываются заявки на изменение)
-		System.out.println("2 ="+etapText);
-		$(By.xpath("//div[text()='"+etapText+"']")).click();
-		sleep(12000);
-//Кликаем по заявке два раза (Открывается окно заявка на изменение)
-		selectRequest().doubleClick();
-		sleep(5000);
-//Кликаем “Отказать” (Всплывает окно "комментарий")
-		buttonRefuse().click();
-		sleep(5000);
-//Вписываем комментарий 
-		textBoxComment().sendKeys("Изменение не возможно");
-		sleep(3000);
-//Кликаем “Ок” (Открыто окно “Заявка на изменение”)
-		buttonOkComment().click();
-		sleep(1200);
-//Кликаем “Ок” (Открывается окно “Заявки на изменение”)
-		buttonOkRequest().doubleClick();
-		sleep(12000);
-//Перейти в раздел "Отклонено"
-		menuRejected().click();
-		sleep(5000);
-////Открываем заявку
-//		choiceRuquest().doubleClick();
+//	public void request() {
+//
+////Кликаем “Отправить на проверку” (Всплывает информация: Запись была отправлена на обработку)
+//		buttonSend().click();
+//		sleep(1500);
+////Переходим на вкладку "Мои заявки" (Отображаются заявки, отправленные на обработку)
+//		menuMyRequest().click();
+//		sleep(2500);
+//		buttonUpdate().click();
+//		sleep(2500);
+//		buttonUpdate().click();
+//		sleep(1500);
+//		String etapText = etap().getText();
+//		System.out.println(etapText);
+////Выходим из учетной записи пользователя (Открывается страница авторизации)
+//		exit().click();
 //		sleep(5000);
-//Выходим из учетной записи администратора (Открывается страница авторизации)	
-		exit().click();
-		sleep(5000);
-	}
-	public void startUser2() {
-
-//Авторизоваться под пользователем 
-		login().sendKeys("6783");
-		sleep(1000);
-		password().sendKeys("6783");
-		sleep(1000);
-		buttonGo().click();
-		sleep(1500);
-//Двойным щелчком мыши заходим в контрагента (Открывается окно "Карточка л/с")
-		agent().doubleClick();
-		sleep(1000);
-//Переходим на вкладку "Мои заявки" (Отображаются заявки)
-		menuMyRequest().click();
-//Кликаем по заявке
-		MyRequest().click();
-		sleep(6000);
-
-	}
+//
+////Авторизация под администратором
+//		login().sendKeys("d-150788@mail.ru");
+//		sleep(1000);
+//		password().sendKeys("123456789");
+//		sleep(1000);
+//		buttonGo().click();
+//		sleep(1500);
+//
+////Перейти на вкладку "заявки на изменение"
+//		requestСhange().click();
+//		sleep(12000);
+////Кликаем раздел того этапа, система которого присвоила заявке ранее (Открываются заявки на изменение)
+//		System.out.println("2 ="+etapText);
+//		$(By.xpath("//div[text()='"+etapText+"']")).click();
+//		sleep(12000);
+////Кликаем по заявке два раза (Открывается окно заявка на изменение)
+//		selectRequest().doubleClick();
+//		sleep(5000);
+////Кликаем “Отказать” (Всплывает окно "комментарий")
+//		buttonRefuse().click();
+//		sleep(5000);
+////Вписываем комментарий 
+//		textBoxComment().sendKeys("Изменение не возможно");
+//		sleep(3000);
+////Кликаем “Ок” (Открыто окно “Заявка на изменение”)
+//		buttonOkComment().click();
+//		sleep(1200);
+////Кликаем “Ок” (Открывается окно “Заявки на изменение”)
+//		buttonOkRequest().doubleClick();
+//		sleep(12000);
+////Перейти в раздел "Отклонено"
+//		menuRejected().click();
+//		sleep(5000);
+//////Открываем заявку
+////		choiceRuquest().doubleClick();
+////		sleep(5000);
+////Выходим из учетной записи администратора (Открывается страница авторизации)	
+//		exit().click();
+//		sleep(5000);
+//	}
+//	public void startUser2() {
+//
+////Авторизоваться под пользователем 
+//		login().sendKeys("6783");
+//		sleep(1000);
+//		password().sendKeys("6783");
+//		sleep(1000);
+//		buttonGo().click();
+//		sleep(1500);
+////Двойным щелчком мыши заходим в контрагента (Открывается окно "Карточка л/с")
+//		agent().doubleClick();
+//		sleep(1000);
+////Переходим на вкладку "Мои заявки" (Отображаются заявки)
+//		menuMyRequest().click();
+////Кликаем по заявке
+//		MyRequest().click();
+//		sleep(6000);
+//
+//	}
 	public void RejectInformation() {
 		
 		app.tko_21().startUser();
 		app.tko_21().selectAgent();
 		app.tko_21().editAgent();
-		app.tko_21().request();
-		app.tko_21().startUser2();
+//		app.tko_21().request();
+//		app.tko_21().startUser2();
 		
 		
 

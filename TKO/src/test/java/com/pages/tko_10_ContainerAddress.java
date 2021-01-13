@@ -55,13 +55,13 @@ public class tko_10_ContainerAddress {
 		return $(By.xpath("//input[@class='v-textfield v-widget v-has-width v-textfield-prompt']")).waitUntil(visible, app.timeOut);
 	}
 	public SelenideElement buttonFind() {
-		return $(By.xpath("(//div[@class='v-button v-widget icon v-button-icon'])[3]")).waitUntil(visible, app.timeOut);
+		return $(By.xpath("//div[text()='Открытая КП']")).waitUntil(visible, app.timeOut);
 	}
 	public SelenideElement buttonSelect() {
 		return $(By.xpath("//div[@class='v-slot v-slot-c-window-action-button v-slot-icon v-slot-c-primary-action']")).waitUntil(visible, app.timeOut);
 	}
 	public SelenideElement buttonOK() {
-		return $(By.xpath("(//div[@class='v-slot v-slot-icon v-slot-c-primary-action'])[2]")).waitUntil(visible, app.timeOut);
+		return $(By.xpath("(//div[@class='v-slot v-slot-icon v-slot-c-primary-action'])[3]")).waitUntil(visible, app.timeOut);
 	}
 	public SelenideElement menuMyRequest() {
 		return $(By.xpath("//div[@class='v-captiontext' and text()='Мои заявки']")).waitUntil(visible, app.timeOut);
@@ -107,14 +107,23 @@ public class tko_10_ContainerAddress {
 	public SelenideElement buttonOk() {
 		return $(By.xpath("//div[@class='v-button v-widget icon v-button-icon c-primary-action v-button-c-primary-action']")).waitUntil(visible, app.timeOut);
 	}
+	public SelenideElement buttonUpdate() {
+		return $(By.xpath("//div[@class='v-button v-widget icon v-button-icon']")).waitUntil(visible, app.timeOut);
+	}
+	public SelenideElement etap() {
+		return $(By.xpath("(//td[@class='v-table-cell-content'])[3]/div")).waitUntil(visible, app.timeOut);
+	}
+	public SelenideElement buttonOK2() {
+		return $(By.xpath("(//div[@class='v-button v-widget icon v-button-icon'])[3]")).waitUntil(visible, app.timeOut);
+	}
 	public void start() {
 //Авторизоваться под пользователем
 		login().sendKeys("6783");
-		sleep(1000);
+
 		password().sendKeys("6783");
-		sleep(1000);
+
 		buttonGo().click();
-		sleep(1500);
+		sleep(1000);
 
 	}
 	public void selectAgent() {
@@ -136,9 +145,9 @@ public class tko_10_ContainerAddress {
 //Кликаем "Добавить" (Открывается окно "контейнерные площадки" со списком конт. площадок)
 		buttonAdd().click();
 		sleep(1000);
-//В строке адрес указываем адрес объекта недвижимости к которому прикреплена контейнерная площадка
-		textAddress().sendKeys("г Иркутск, ул Карла Либкнехта, д 107-а");
-		sleep(1500);
+////В строке адрес указываем адрес объекта недвижимости к которому прикреплена контейнерная площадка
+//		textAddress().sendKeys("Карла Либкнехта ул, 107 РТ-НЭО ТСЖ ГРАНИТ");
+//		sleep(1500);
 //кликаем " Выбрать ближайший "(Система производит поиск)
 		buttonFind().click();
 		sleep(2500);
@@ -147,26 +156,89 @@ public class tko_10_ContainerAddress {
 		sleep(1000);
 //Кликаем “ОК” (всплывает информация что,  запись была отправлена на обработку)
 		buttonOK().click();
-		sleep(2500);
-//Переходим на вкладку "Мои заявки" (Отображаются заявки, отправленные на обработку)
+		sleep(1000);
+		buttonOK2().click();
+// Переходим на вкладку "Мои заявки" (Отображаются заявки, отправленные на обработку)
 		menuMyRequest().click();
-		sleep(1500);
-//Выбираем заявку, отправленную на обработку 
-		MyRequest().click();
-		sleep(5500);
-//Выходим из учетной записи пользователя (Открывается страница авторизации)
+		sleep(1000);
+	}
+
+	public String et() {
+		String etapText = etap().getText();
+		System.out.println(etapText);
+		return etapText;
+	}
+
+	public void startAdmin() {
+		String res = et();
+// Выходим из учетной записи пользователя (Открывается страница авторизации)
 		exit().click();
-		sleep(5000);
-		}
-			
-			
+		sleep(1000);
+// Авторизация под администратором
+		login().sendKeys("d-150788@mail.ru");
+		password().sendKeys("123456789");
+		buttonGo().click();
+		sleep(1000);
+// Перейти на вкладку "заявки на изменение"
+		requestСhange().click();
+		sleep(4000);
+// Кликаем раздел того этапа, система которого присвоила заявке ранее (Открываются заявки на изменение)
+		System.out.println("2 =" + res);
+		$(By.xpath("//div[text()='" + res + "']")).click();
+		sleep(4000);
+// Кликаем по заявке два раза (Открывается окно заявка на изменение)
+		selectRequest().doubleClick();
+		sleep(3000);
+// Кликаем “Согласовать” (Всплывает окно "комментарий")
+		buttonApprove().click();
+		sleep(1000);
+// Вписываем комментарий (Согласованно)
+		textBoxComment().sendKeys(Keys.TAB);
+		sleep(1000);
+// Кликаем “Ок” (Открыто окно “Заявка на изменение”)
+		buttonOkComment().click();
+		sleep(1000);
+// Кликаем “Ок” (Открывается окно “Заявки на изменение”)
+		buttonOkRequest().doubleClick();
+		sleep(1000);
+// Перейти в раздел "Принято"
+		menuAccepted().click();
+		sleep(8000);
+// Двойным щелчком открываем заявку
+		choiceRuquest().doubleClick();
+		sleep(1000);
+// Выходим из учетной записи администратора (Открывается страница авторизации)
+		exit().click();
+		sleep(1000);
+	}
+
+	public void startUser2() {
+// Авторизоваться под пользователем
+		login().sendKeys("6783");
+
+		password().sendKeys("6783");
+
+		buttonGo().click();
+		sleep(1000);
+// Двойным щелчком мыши заходим в контрагента (Открывается окно "Карточка л/с")
+		agent().doubleClick();
+		sleep(1000);
+		
+// Переходим на вкладку "Мои заявки" (Отображаются заявки)
+		menuMyRequest().click();
+		sleep(1000);
+// Кликаем на заявку
+//			MyRequest().click();
+		sleep(6000);
+	}
 
 	public void AddProperty() {
 		
 		app.tko_10().start();
 		app.tko_10().selectAgent();
 		app.tko_10().editAgent();
-
+		app.tko_10().startAdmin();
+		app.tko_10().startUser2();
 
 
 

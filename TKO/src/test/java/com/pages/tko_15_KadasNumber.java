@@ -51,9 +51,9 @@ public class tko_15_KadasNumber {
 	
 	public void start() {
 // Авторизация под администратором
-		login().sendKeys("testadmin");
+		login().sendKeys("d-150788@mail.ru");
 		sleep(1000);
-		password().sendKeys("1");
+		password().sendKeys("123456789");
 		sleep(1000);
 		buttonGo().click();
 		sleep(1500);
@@ -70,7 +70,7 @@ public class tko_15_KadasNumber {
 //Выбрать "Объекты недвижимости" 
 		ON().click();
 //Выбираем адрес из списка двойным щелчком мыши		
-		sleep(5000);
+		sleep(8000);
 	}
 //Сохраняем содержимое строки
 	public String KadasN() {

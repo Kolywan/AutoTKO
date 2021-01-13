@@ -87,9 +87,9 @@ public class tko_23_GetAccount {
 	}
 	public void start() {
 // Авторизация под администратором
-		login().sendKeys("testadmin");
+		login().sendKeys("d-150788@mail.ru");
 		sleep(1000);
-		password().sendKeys("1");
+		password().sendKeys("123456789");
 		sleep(1000);
 		buttonGo().click();
 		sleep(1500);
@@ -158,7 +158,7 @@ public class tko_23_GetAccount {
 		sleep(4000);
 //Нажимаем на "Excel"(Появляется окно "Подтверждение")
 		buttonExcel().click();
-		sleep(2000);
+		sleep(4000);
 //// Кликаем "Все строки" (Скачивается Excel файл)
 //		selectAllLine().click();
 //		sleep(2000);

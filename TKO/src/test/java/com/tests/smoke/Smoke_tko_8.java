@@ -14,7 +14,7 @@ public class Smoke_tko_8 extends BaseTest {
 
 	
 	public void smoke1() throws Exception {
-		app.tko_97().addONWithoutChecking();
+		app.tko_96().addONWithoutCheckingAdmin();
 		app.tko_8().RequestDeleteON();
 
 

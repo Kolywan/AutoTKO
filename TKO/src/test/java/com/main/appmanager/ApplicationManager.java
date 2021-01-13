@@ -43,12 +43,16 @@ import com.pages.tko_28_ApproveContract;
 import com.pages.tko_99_UserAndAgentPNOOLR;
 import com.pages.tko_2_UserAndAgent;
 import com.pages.tko_30_AccountRent;
+import com.pages.tko_31_ExportApplication;
+import com.pages.tko_33_AddOnNON;
 import com.pages.tko_3_CreateUser;
 import com.pages.tko_4_AddDocument;
 import com.pages.tko_5_AddProperty;
 import com.pages.tko_6_AddPropertyRent;
 import com.pages.tko_7_ChangeInformationUser;
 import com.pages.tko_8_RequestDeleteON;
+import com.pages.tko_95_DeleteON;
+import com.pages.tko_96_addONWithoutCheckingAdmin;
 import com.pages.tko_97_addONWithoutChecking;
 import com.pages.tko_98_DeleteAgent;
 import com.pages.tko_9_AddRent;
@@ -67,6 +71,8 @@ public class ApplicationManager {
 	protected tko_99_UserAndAgentPNOOLR tko_99;
 	protected tko_98_DeleteAgent tko_98;
 	protected tko_97_addONWithoutChecking tko_97;
+	protected tko_96_addONWithoutCheckingAdmin tko_96;
+	protected tko_95_DeleteON tko_95;
 	protected tko_1_CreateAgent tko_1;
 	protected tko_2_UserAndAgent tko_2;
 	protected tko_3_CreateUser tko_3;
@@ -96,6 +102,8 @@ public class ApplicationManager {
 	protected tko_27_SendEmail tko_27;
 	protected tko_28_ApproveContract tko_28;
 	protected tko_30_AccountRent tko_30;
+	protected tko_31_ExportApplication tko_31;
+	protected tko_33_AddOnNON tko_33;
 	protected DelEmails deleteMails;
 	protected GetEmail getEmail;
 
@@ -287,6 +295,18 @@ public class ApplicationManager {
 		return tko_30 = new tko_30_AccountRent();
 	}
 	// ##############################
+	public tko_31_ExportApplication tko_31() {
+		return tko_31 = new tko_31_ExportApplication();
+	}
+	// ##############################
+	public tko_95_DeleteON tko_95() {
+		return tko_95 = new tko_95_DeleteON();
+	}
+	// ##############################
+	public tko_96_addONWithoutCheckingAdmin tko_96() {
+		return tko_96 = new tko_96_addONWithoutCheckingAdmin();
+	}
+	// ##############################
 	public tko_97_addONWithoutChecking tko_97() {
 		return tko_97 = new tko_97_addONWithoutChecking();
 	}
@@ -299,7 +319,10 @@ public class ApplicationManager {
 		return tko_99 = new tko_99_UserAndAgentPNOOLR();
 	}
 	// ##############################
-
+	public tko_33_AddOnNON tko_33() {
+		return tko_33 = new tko_33_AddOnNON();
+	}
+	// ##############################
 	public void switchLoging() throws SecurityException, IOException {
 		// set logger Level for RemoteWebDriver
 		Logger logger = Logger.getLogger(RemoteWebDriver.class.getName());

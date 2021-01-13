@@ -59,7 +59,7 @@ public class tko_16_ChangeInformation {
 	}
 
 	public SelenideElement buttonSend() {
-		return $(By.xpath("//span[text()='Отправить на проверку']/../..")).waitUntil(visible, app.timeOut);
+		return $(By.xpath("//span[text()='OK']/../..")).waitUntil(visible, app.timeOut);
 	}
 	public SelenideElement menuMyRequest() {
 		return $(By.xpath("//div[@class='v-captiontext' and text()='Мои заявки']")).waitUntil(visible, app.timeOut);
@@ -92,7 +92,7 @@ public class tko_16_ChangeInformation {
 	}
 	
 	public SelenideElement buttonOkComment() {
-		return $(By.xpath("//div[@class='v-csslayout v-layout v-widget c-flowlayout v-csslayout-c-flowlayout v-has-width v-csslayout-spacing']/div")).waitUntil(visible, app.timeOut);
+		return $(By.xpath("(//span[text()='OK']/../..)[2]")).waitUntil(visible, app.timeOut);
 	}
 	
 	public SelenideElement buttonOkRequest() {
@@ -172,97 +172,97 @@ public class tko_16_ChangeInformation {
 		sleep(1500);
 //Переходим на вкладку "Мои заявки" (Отображаются заявки, отправленные на обработку)
 		menuMyRequest().click();
-		sleep(6000);
-		buttonUpdate().click();
-		sleep(1500);
-		buttonUpdate().click();
-		sleep(1500);
-		buttonUpdate().click();
-		sleep(2500);
-
-     }
-	public String et() {
-		String etapText = etap().getText();
-		System.out.println(etapText);
-//		etap().shouldNotHave(text("Верификация"));
-//		etap().shouldNotHave(text(etapText),text("Верификация"));
-//		etap().shouldNot(text(etapText),text("Верификация"));
-		return etapText;
-	}
-	public void request() {
-		String res=et();
-//Выходим из учетной записи пользователя (Открывается страница авторизации)
-		exit().click();
-		sleep(5000);
-//Авторизация под администратором
-		login().sendKeys("testadmin");
-		sleep(1000);
-		password().sendKeys("1");
-		sleep(1000);
-		buttonGo().click();
-		sleep(1500);
-
-//Перейти на вкладку "заявки на изменение"
-		requestСhange().click();
-		sleep(7000);
-//Кликаем раздел того этапа, система которого присвоила заявке ранее (Открываются заявки на изменение)
-		System.out.println("2 ="+res);
-		$(By.xpath("//div[text()='"+res+"']")).click();
-		sleep(8000);
-//Кликаем по заявке два раза (Открывается окно заявка на изменение)
-		selectRequest().doubleClick();
-		sleep(5000);
-//Кликаем “Согласовать” (Всплывает окно "комментарий")
-		buttonApprove().click();
-		sleep(3000);
-//Вписываем комментарий 
-		textBoxComment().sendKeys("Изменение возможно");
-		sleep(3000);
-		textBoxComment().sendKeys(Keys.TAB);
-		sleep(1000);
-//Кликаем “Ок” (Открыто окно “Заявка на изменение”)
-		buttonOkComment().sendKeys(Keys.ENTER);
-		sleep(1000);
-//Кликаем “Ок” (Открывается окно “Заявки на изменение”)
-		buttonOkRequest().doubleClick();
-		sleep(5000);
-////Перейти в раздел "Принято"
-//		menuAccepted().click();
+		sleep(4000);
+//		buttonUpdate().click();
+//		sleep(1500);
+//		buttonUpdate().click();
+//		sleep(1500);
+//		buttonUpdate().click();
+//		sleep(2500);
+//
+}
+//	public String et() {
+//		String etapText = etap().getText();
+//		System.out.println(etapText);
+////		etap().shouldNotHave(text("Верификация"));
+////		etap().shouldNotHave(text(etapText),text("Верификация"));
+////		etap().shouldNot(text(etapText),text("Верификация"));
+//		return etapText;
+//	}
+//	public void request() {
+//		String res=et();
+////Выходим из учетной записи пользователя (Открывается страница авторизации)
+//		exit().click();
 //		sleep(5000);
-////Открываем заявку
-//		choiceRuquest().doubleClick();
+////Авторизация под администратором
+//		login().sendKeys("d-150788@mail.ru");
+//		sleep(1000);
+//		password().sendKeys("123456789");
+//		sleep(1000);
+//		buttonGo().click();
+//		sleep(1500);
+//
+////Перейти на вкладку "заявки на изменение"
+//		requestСhange().click();
+//		sleep(10000);
+////Кликаем раздел того этапа, система которого присвоила заявке ранее (Открываются заявки на изменение)
+//		System.out.println("2 ="+res);
+//		$(By.xpath("//div[text()='"+res+"']")).click();
+//		sleep(10000);
+////Кликаем по заявке два раза (Открывается окно заявка на изменение)
+//		selectRequest().doubleClick();
 //		sleep(5000);
-//Выходим из учетной записи администратора (Открывается страница авторизации)	
-		exit().click();
-		sleep(5000);
-	}
-	public void startUser2() {
-
-//Авторизоваться под пользователем 
-		login().sendKeys("6783");
-		sleep(1000);
-		password().sendKeys("6783");
-		sleep(1000);
-		buttonGo().click();
-		sleep(1500);
-//Двойным щелчком мыши заходим в контрагента (Открывается окно "Карточка л/с")
-		agent().doubleClick();
-		sleep(1000);
-//Переходим на вкладку "Мои заявки" (Отображаются заявки)
-		menuMyRequest().click();
-//Кликаем по заявке
-		MyRequest().click();
-		sleep(6000);
-
-	}
+////Кликаем “Согласовать” (Всплывает окно "комментарий")
+//		buttonApprove().click();
+//		sleep(3000);
+////Вписываем комментарий 
+//		textBoxComment().sendKeys("Изменение возможно");
+//		sleep(3000);
+//		textBoxComment().sendKeys(Keys.TAB);
+//		sleep(1000);
+////Кликаем “Ок” (Открыто окно “Заявка на изменение”)
+//		buttonOkComment().sendKeys(Keys.ENTER);
+//		sleep(1000);
+////Кликаем “Ок” (Открывается окно “Заявки на изменение”)
+//		buttonOkRequest().doubleClick();
+//		sleep(5000);
+//////Перейти в раздел "Принято"
+////		menuAccepted().click();
+////		sleep(5000);
+//////Открываем заявку
+////		choiceRuquest().doubleClick();
+////		sleep(5000);
+////Выходим из учетной записи администратора (Открывается страница авторизации)	
+//		exit().click();
+//		sleep(5000);
+//	}
+//	public void startUser2() {
+//
+////Авторизоваться под пользователем 
+//		login().sendKeys("6783");
+//		sleep(1000);
+//		password().sendKeys("6783");
+//		sleep(1000);
+//		buttonGo().click();
+//		sleep(1500);
+////Двойным щелчком мыши заходим в контрагента (Открывается окно "Карточка л/с")
+//		agent().doubleClick();
+//		sleep(1000);
+////Переходим на вкладку "Мои заявки" (Отображаются заявки)
+//		menuMyRequest().click();
+////Кликаем по заявке
+//		MyRequest().click();
+//		sleep(6000);
+//
+//	}
 	public void ChangeInformation() {
 		
 		app.tko_16().startUser();
 		app.tko_16().selectAgent();
 		app.tko_16().editAgent();
 		app.tko_16().loadFile();
-		app.tko_16().request();
-		app.tko_16().startUser2();
+//		app.tko_16().request();
+//		app.tko_16().startUser2();
 		
 		
 

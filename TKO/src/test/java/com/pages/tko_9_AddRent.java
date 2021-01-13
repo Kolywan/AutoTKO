@@ -68,6 +68,9 @@ public class tko_9_AddRent {
 	public SelenideElement textFone() {
 		return $(By.xpath("//input[@class='c-maskedfield v-widget c-maskedfield-error c-maskedfield-error-error c-maskedfield-required v-required v-has-width c-maskedfield-empty']")).waitUntil(visible, app.timeOut);
 	}
+	public SelenideElement textFone2() {
+		return $(By.xpath("//input[@class='c-maskedfield v-widget c-maskedfield-error c-maskedfield-error-error c-maskedfield-required v-required v-has-width c-maskedfield-empty c-maskedfield-focus']")).waitUntil(visible, app.timeOut);
+	}
 	public SelenideElement menuObjectRent() {
 		return $(By.xpath("//div[@class='v-filterselect-button']")).waitUntil(visible, app.timeOut);
 	}
@@ -144,7 +147,9 @@ public class tko_9_AddRent {
 		textFIO().sendKeys("Журавлева Анна Николаевна");
 		sleep(1000);
 //Указываем телефон
-		textFone().sendKeys("79965009685");
+		textFone().click();
+		sleep(1000);
+		textFone2().sendKeys("79965009685");
 		sleep(1000);
 //Открываем меню "Категория использования"
 		menuObjectRent().click();
@@ -153,7 +158,7 @@ public class tko_9_AddRent {
 		selectObject2().click();
 		sleep(1000);
 //Указываем площадь
-		textS().sendKeys("100");
+		textS().sendKeys("10");
 		sleep(1000);
 //Загружаем "Договор"
 		file();

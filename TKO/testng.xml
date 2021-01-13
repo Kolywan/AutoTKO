@@ -1,4 +1,4 @@
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
 
 <suite name="SMOKE TESTS TKO" verbose="1" thread-count="1">
@@ -22,30 +22,27 @@
 		<!-- QA stend -->
 	<parameter name="url" value="http://tko-qa.groupstp.ru/app/#!/" />
 
+<classes>
 
-		<classes>
-<class name="com.tests.smoke.Smoke_tko_98" />		
-<class name="com.tests.smoke.Smoke_tko_1" />
-<class name="com.tests.smoke.Smoke_tko_3" />
+
+
+
+<!-- <class name="com.tests.smoke.Smoke_tko_6" /> -->
+<!-- <class name="com.tests.smoke.Smoke_tko_95"/> -->
+<!-- <class name="com.tests.smoke.Smoke_tko_1" /> -->
+<class name="com.tests.smoke.Smoke_tko_33" />
 <class name="com.tests.smoke.Smoke_tko_99" />
-<class name="com.tests.smoke.Smoke_tko_15" />
-<class name="com.tests.smoke.Smoke_tko_10" />
+<class name="com.tests.smoke.Smoke_tko_10" /> 
 <class name="com.tests.smoke.Smoke_tko_9" />
 <class name="com.tests.smoke.Smoke_tko_17" />
-<class name="com.tests.smoke.Smoke_tko_28" />
 <class name="com.tests.smoke.Smoke_tko_12" />
 <class name="com.tests.smoke.Smoke_tko_4" />
 <class name="com.tests.smoke.Smoke_tko_5" />
-<class name="com.tests.smoke.Smoke_tko_6" />
-<class name="com.tests.smoke.Smoke_tko_7" />
 <class name="com.tests.smoke.Smoke_tko_8" />
-<class name="com.tests.smoke.Smoke_tko_13" />
-<class name="com.tests.smoke.Smoke_tko_14" />
-<class name="com.tests.smoke.Smoke_tko_11" />
 <class name="com.tests.smoke.Smoke_tko_16" />
 <class name="com.tests.smoke.Smoke_tko_21" />
 <class name="com.tests.smoke.Smoke_tko_22" />
-<class name="com.tests.smoke.Smoke_tko_20" />
+<!-- <class name="com.tests.smoke.Smoke_tko_20" />
 <class name="com.tests.smoke.Smoke_tko_18" />
 <class name="com.tests.smoke.Smoke_tko_19" />
 <class name="com.tests.smoke.Smoke_tko_23" />
@@ -54,10 +51,21 @@
 <class name="com.tests.smoke.Smoke_tko_26" />
 <class name="com.tests.smoke.Smoke_tko_27" />
 <class name="com.tests.smoke.Smoke_tko_30" />
-<!-- <class name="com.tests.smoke.Smoke_tko_98" />
+<class name="com.tests.smoke.Smoke_tko_98" />
 <class name="com.tests.smoke.Smoke_tko_99" />
 <class name="com.tests.smoke.Smoke_tko_10" />
-<class name="com.tests.smoke.Smoke_tko_12" /> -->
+<class name="com.tests.smoke.Smoke_tko_12" />
+<class name="com.tests.smoke.Smoke_tko_28" />
+<class name="com.tests.smoke.Smoke_tko_98"/>
+<class name="com.tests.smoke.Smoke_tko_3" />
+<class name="com.tests.smoke.Smoke_tko_15" />
+<class name="com.tests.smoke.Smoke_tko_7" />
+<class name="com.tests.smoke.Smoke_tko_14" />
+<class name="com.tests.smoke.Smoke_tko_11" /> -->
+<!-- <class name="com.tests.smoke.Smoke_tko_6" /> -->
+<!-- <class name="com.tests.smoke.Smoke_tko_95"/> -->
+<!-- <class name="com.tests.smoke.Smoke_tko_1" /> -->
+<class name="com.tests.smoke.Smoke_tko_13" />
 
 </classes>
 	</test>

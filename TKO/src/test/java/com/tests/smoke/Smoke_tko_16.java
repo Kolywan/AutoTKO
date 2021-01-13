@@ -14,7 +14,7 @@ public class Smoke_tko_16 extends BaseTest {
 
 	
 	public void smoke1() throws Exception {
-
+		app.tko_96().addONWithoutCheckingAdmin();
 		app.tko_16().ChangeInformation();
 
 

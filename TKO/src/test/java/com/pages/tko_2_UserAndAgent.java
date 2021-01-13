@@ -78,7 +78,7 @@ public class tko_2_UserAndAgent {
 // Авторизация под администратором
 		login().sendKeys("testadmin");
 		sleep(1000);
-		password().sendKeys("1");
+		password().sendKeys("123");
 		sleep(1000);
 		buttonGo().click();
 		sleep(1500);

@@ -7,11 +7,13 @@ import static com.codeborne.selenide.Selenide.sleep;
 import java.util.Random;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 import com.codeborne.selenide.SelenideElement;
 import com.main.appmanager.ApplicationManager;
+import com.teamdev.jxcapture.demo.image.Actions;
 
 public class tko_99_UserAndAgentPNOOLR {
 	public static ApplicationManager app;
@@ -81,76 +83,64 @@ public class tko_99_UserAndAgentPNOOLR {
 	
 	public void start() {
 // Авторизация под администратором
-		login().sendKeys("testadmin");
 		sleep(1000);
-		password().sendKeys("1");
-		sleep(1000);
+		login().sendKeys("d-150788@mail.ru");
+		
+		password().sendKeys("123456789");
+		
 		buttonGo().click();
-		sleep(1500);
+		sleep(1000);
 
 	}
 	public void selectAgent() {
 
 //Зайти в "Приложение" 
 		menuApp().click();
-		sleep(1000);
+		sleep(3000);
 //Выбрать "Клиенты" 
 		menuClient().click();
-		sleep(1000);
+		sleep(1500);
 //Выбрать "Контрагенты" 
 		menuAgent().click();
 		sleep(5000);
 //Случайным подбором происходит выбор контрагента из предложенных вариантов
 				Random rend = new Random();
 				int Low = 1;
-				int High = 40;
+				int High = 45;
 				int x = rend.nextInt(High - Low) + Low;
 				$(By.xpath("//table[@class='v-table-table']/tbody/tr["+ x +"]")).doubleClick();
 				
-		sleep(3000);
+		sleep(1000);
 	}
 
 	public void selectUser() {
-		
-		$(By.xpath("//body")).sendKeys(Keys.DOWN);
-	
 
-		
-
-			
-			$(By.xpath("//div[text()='Есть ПНООЛР']/../../span/input")).sendKeys(Keys.SPACE);
-			
-			
-			//checkBoxPNOOLR().click();
-			
-			
-			
-			sleep(5000);
-		
-		//checkBoxPNOOLR().click();
-		
 //С правой стороны карточки л/с нажимем на меню "Пользователь"
+
+
 		menuUser().click();
 		sleep(1500);
 //Добавляем условие поиска
 		searchCondition().click();
-		sleep(1000);
+		
 //Из предложенного списка двойным щелчком мыши выбираем "Логин"
 		searchLogin().doubleClick();
-		sleep(1000);
+		
 //Вписываем условие поиска
 		searchText().sendKeys("6783");
-		sleep(1000);
+		
 //Нажимаем кнопку "Поиск"
 		searchButton().click();
-		sleep(1000);
+		
 //Двойным щелчком выбираем найденного пользователя
 		user().click();
 		user().doubleClick();
-		sleep(1000);
+		
+		$(By.xpath("//div[text()='Есть ПНООЛР']/../../span/input")).sendKeys(Keys.SPACE);
+		
 //Нажимаем кнопку "OK"
 		buttonOk().click();
-		sleep(3000);
+		sleep(1000);
 	}
 	public void AddUserAgentPNOOLR() {
 		

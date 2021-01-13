@@ -48,7 +48,7 @@ public class tko_12_DeleteContainerAddress {
 		return $(By.xpath("//div[@class='v-table-cell-wrapper']")).waitUntil(visible, app.timeOut);
 	}
 		public SelenideElement selectKP() {
-		return $(By.xpath("//tr[@class='v-table-row']/td")).waitUntil(visible, app.timeOut);
+		return $(By.xpath("//div[text()='Актуальная']")).waitUntil(visible, app.timeOut);
 	}
 	public SelenideElement buttonDelete() {
 		return $(By.xpath("//span[text()='Удалить']/../..")).waitUntil(visible, app.timeOut);

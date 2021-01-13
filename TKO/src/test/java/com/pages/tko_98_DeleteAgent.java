@@ -5,6 +5,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.sleep;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 import com.codeborne.selenide.SelenideElement;
@@ -57,7 +58,7 @@ public class tko_98_DeleteAgent {
 		return $(By.xpath("//div[@class='v-window-maximizebox']")).waitUntil(visible, app.timeOut);
 	}
 	public SelenideElement searchAccount() {
-		return $(By.xpath("//div[@class='v-tree-node-caption']//span[text()='Лицевой счет']")).waitUntil(visible,
+		return $(By.xpath("//span[text()='Лицевой счет']/..")).waitUntil(visible,
 				app.timeOut);
 	}
 	
@@ -89,11 +90,11 @@ public class tko_98_DeleteAgent {
 	public void start() {
 // Авторизоваться под пользователем
 		login().sendKeys("6783");
-		sleep(1000);
+		
 		password().sendKeys("6783");
-		sleep(1000);
+		
 		buttonGo().click();
-		sleep(1500);
+		
 // Двойным щелчком мыши заходим в контрагента (Открывается окно "Карточка л/с")
 		agent().doubleClick();
 		sleep(1000);
@@ -103,15 +104,15 @@ public class tko_98_DeleteAgent {
 		System.out.println(account);
 		// Выходим из учетной записи пользователя (Открывается страница авторизации)
 		exit().click();
-		sleep(5000);
+		
 
 // Авторизация под администратором
-		login().sendKeys("testadmin");
-		sleep(1000);
-		password().sendKeys("1");
-		sleep(1000);
+		login().sendKeys("d-150788@mail.ru");
+		
+		password().sendKeys("123456789");
+		
 		buttonGo().click();
-		sleep(1500);
+		sleep(1000);
 
 //Зайти в "Приложение" 
 		menuApp().click();
@@ -121,14 +122,18 @@ public class tko_98_DeleteAgent {
 		sleep(1000);
 //Выбрать "Контрагенты" 
 		menuAgent().click();
-		sleep(5000);
+		sleep(8000);
 // Кликаем "Добавить условие поиска"
 		searchCondition().click();
 		sleep(1000);
 // разворачиваем окно на весь экран
 		maximizebox().click();
 		sleep(1000);
+		$(By.xpath("//input[@class='v-textfield v-widget v-has-width c-empty-value']")).sendKeys("Лицевой счет");
 // Из предложенного списка двойным щелчком мыши выбираем "Лицевой счет"
+		
+		searchAccount().click();
+		sleep(1000);
 		searchAccount().doubleClick();
 		sleep(1000);
 // Вписываем условие поиска(Лицевой счет который был ранее сохранен)
@@ -136,17 +141,17 @@ public class tko_98_DeleteAgent {
 		sleep(1000);
 // Нажимаем кнопку "Поиск"
 		searchButton().click();
-		sleep(4000);
+		sleep(1000);
 // Выбираем контрагента из списка двойным щелчком мыши
 		$(By.xpath("//div[text()='"+ account +"']")).doubleClick();
-		sleep(1000);
+		
 
 //С правой стороны карточки л/с нажимем на меню "Пользователь"
 		buttonDeleteUser().click();
-		sleep(1500);
+		sleep(1000);
 // Нажимаем кнопку "OK"
 		buttonOk().click();
-		sleep(3000);
+		
 	}
 	public void DeleteAgent() {
 		

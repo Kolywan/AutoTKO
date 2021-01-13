@@ -348,7 +348,7 @@ public class tko_30_AccountRent {
 // Авторизация под администратором
 		login().sendKeys("testadmin");
 		sleep(1000);
-		password().sendKeys("1");
+		password().sendKeys("123");
 		sleep(1000);
 		buttonGo().click();
 		sleep(1500);
@@ -498,7 +498,7 @@ public class tko_30_AccountRent {
 //Авторизация под администратором 
 		login().sendKeys("testadmin");
 		sleep(1000);
-		password().sendKeys("1");
+		password().sendKeys("123");
 		sleep(1000);
 		buttonGo().click();
 		sleep(1500);
@@ -529,9 +529,9 @@ public class tko_30_AccountRent {
 // Выбираем контрагента из списка двойным щелчком мыши
 		agent().doubleClick();
 		sleep(1000);
-// Открыть вкладку счета
+// Открыть вкладку Счета арендаторам
 		menuAccountRent().click();
-		sleep(8000);
+		sleep(30000);
 //Перейти на вкладку арендаторы
 		menuRent().click();
 		sleep(1000);
@@ -556,10 +556,10 @@ public class tko_30_AccountRent {
 		sleep(1000);
 // Кликаем "Добавить" (Открывается окно "контейнерные площадки" со списком конт.площадок)
 		buttonAddContainer().click();
-		sleep(3000);
-// В строке адрес указываем адрес объекта недвижимости к которому прикреплена контейнерная площадка
-		textAddress().sendKeys("г Иркутск, ул Карла Либкнехта, д 107-а");
-		sleep(1500);
+		sleep(5000);
+//// В строке адрес указываем адрес объекта недвижимости к которому прикреплена контейнерная площадка
+//		textAddress().sendKeys("Карла Либкнехта ул, 107 РТ-НЭО ТСЖ ГРАНИТ");
+//		sleep(1500);
 // кликаем " Выбрать ближайший "(Система производит поиск)
 		buttonFindContainer().click();
 		sleep(2500);

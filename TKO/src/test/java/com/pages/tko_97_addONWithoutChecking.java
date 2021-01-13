@@ -344,9 +344,9 @@ public class tko_97_addONWithoutChecking {
 	
 	public void getKadastrNumber() {
 // Авторизация под администратором
-		login().sendKeys("testadmin");
+		login().sendKeys("d-150788@mail.ru");
 		sleep(1000);
-		password().sendKeys("1");
+		password().sendKeys("123456789");
 		sleep(1000);
 		buttonGo().click();
 		sleep(1500);
@@ -365,10 +365,11 @@ public class tko_97_addONWithoutChecking {
 	// Случайно выбираем адрес из списка
 	// Сохраняем кадастровый номер
 	public String KadasN() {
-		Random random = new Random();
-		int n = 10 + random.nextInt(46 - 1);
-		System.out.println(n);
-		String number = $(By.xpath("//table[@class='v-table-table']/tbody/tr[" + n + "]/td[4]/div")).getText();
+		Random r = new Random();
+		int Low = 1;
+		int High = 30;
+		int Result = r.nextInt(High-Low) + Low;
+		String number = $(By.xpath("//table[@class='v-table-table']/tbody/tr[" + Result + "]/td[4]/div")).getText();
 
 		return number;
 	}

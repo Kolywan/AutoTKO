@@ -52,7 +52,7 @@ public class tko_6_AddPropertyRent {
 	}
 	
 	public SelenideElement TextBoxKadasNumber() {
-		return $(By.xpath("//div[@class='v-widget v-has-caption v-caption-on-right']/input")).waitUntil(visible, app.timeOut);
+		return $(By.xpath("//div[@class='v-widget v-has-caption v-caption-on-right v-has-width']/input")).waitUntil(visible, app.timeOut);
 	}
 	
 	public SelenideElement buttonFind() {
@@ -96,13 +96,22 @@ public class tko_6_AddPropertyRent {
 		return $(By.xpath("//input[@class='v-textfield v-widget v-textfield-error v-textfield-error-error v-textfield-required v-required c-empty-value']")).waitUntil(visible, app.timeOut);
 	}
 	public SelenideElement buttonSend() {
-		return $(By.xpath("//span[text()='Отправить на проверку']/../..")).waitUntil(visible, app.timeOut);
+		return $(By.xpath("//span[text()='OK']/../..")).waitUntil(visible, app.timeOut);
 	}
 	public SelenideElement menuMyRequest() {
 		return $(By.xpath("//div[@class='v-captiontext' and text()='Мои заявки']")).waitUntil(visible, app.timeOut);
 	}
 	public SelenideElement MyRequest() {
 		return $(By.xpath("//table[@class='v-table-table']/tbody/tr")).waitUntil(visible, app.timeOut);
+	}
+	public SelenideElement buttonLoadFile() {
+		return $(By.xpath("//span[text()='Загрузить файл']/../..")).waitUntil(visible, app.timeOut);
+	}
+	public SelenideElement selectRent() {
+		return $(By.xpath("//div[@class='v-table-cell-wrapper']")).waitUntil(visible, app.timeOut);
+	}
+	public SelenideElement buttonSelect() {
+		return $(By.xpath("//span[text()='Выбрать']/../..")).waitUntil(visible, app.timeOut);
 	}
 	public void start() {
 //Авторизоваться под пользователем 
@@ -121,7 +130,7 @@ public class tko_6_AddPropertyRent {
 		sleep(1000);
 //Переходим на вкладку "Объекты недвижимости"
 		menuProperty().click();
-		sleep(1000);
+		sleep(2000);
 //Кликаем "Добавить" (появляется форма "Редактор контрагент-объект недвижимости")
 		buttonAdd().click();
 		sleep(1000);
@@ -152,12 +161,18 @@ public class tko_6_AddPropertyRent {
 //Открываем меню “Тип владения” 
 		menuPossessions().click();
 		sleep(1000);
-//Выбираем “Тип владения” 
+//Выбираем “Тип владения” Аренда (Открывается окно "Выберите арендодателя")
 		selectPossessions().click();
 		sleep(1000);
-//Указываем срок действия аренды
-		date().sendKeys("31122019");
-		sleep(5000);
+////Выбираем арендодателя
+//		selectRent().click();
+//		sleep(1000);
+////Кликаем "Выбрать"
+//		buttonSelect().click();
+//		sleep(1000);
+////Указываем срок действия аренды
+//		date().sendKeys("31122019");
+//		sleep(5000);
 	}
 	// Загрузка файла
 	public SelenideElement file() {
@@ -170,15 +185,17 @@ public class tko_6_AddPropertyRent {
 
 	}
 	public void loadFile() {
-//Выбираем поле загрузки файлов
-		boxFile().doubleClick();
-		sleep(1000);
-//Загружаем документ “Договор аренды”
-		file();
-		sleep(1500);
-//Сохраняем файл
-		saveFile().click();
-		sleep(1500);
+////Выбираем поле загрузки файлов
+//		boxFile().click();
+//		sleep(1000);
+//		buttonLoadFile().click();
+//		sleep(1000);
+////Загружаем документ “Договор аренды”
+//		file();
+//		sleep(1500);
+////Сохраняем файл
+//		saveFile().click();
+//		sleep(1500);
 		
 //		boxFile2().doubleClick();
 //		sleep(1000);

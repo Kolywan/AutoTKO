@@ -73,7 +73,7 @@ public class tko_1_CreateAgent {
 // Авторизация под администратором
 		login().sendKeys("testadmin");
 		sleep(1000);
-		password().sendKeys("1");
+		password().sendKeys("123");
 		sleep(1000);
 		buttonGo().click();
 		sleep(1500);
@@ -89,7 +89,7 @@ public class tko_1_CreateAgent {
 		sleep(1000);
 //Выбрать "Контрагенты" 
 		menuAgent().click();
-		sleep(5000);
+		sleep(9000);
 //Кликаем “Создать” (Откроется окно "Карточка л/с")
 		buttonCreate().doubleClick();
 		sleep(3000);

@@ -10,7 +10,7 @@ public class Smoke_tko_11 extends BaseTest {
 	@Parameters()
 	@Test(groups = { "smoke" }, priority = 1)
 	
-	// tko-9 : Добавление арендатора
+	// tko-11 : Добавление нового адреса контейнерной площадки
 
 	
 	public void smoke1() throws Exception {

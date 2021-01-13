@@ -115,9 +115,9 @@ public class tko_26_SendSomeMassage {
 	}
 	public void start() {
 // Авторизация под администратором
-		login().sendKeys("testadmin");
+		login().sendKeys("d-150788@mail.ru");
 		sleep(1000);
-		password().sendKeys("1");
+		password().sendKeys("123456789");
 		sleep(1000);
 		buttonGo().click();
 		sleep(1500);

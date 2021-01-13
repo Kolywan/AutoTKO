@@ -53,7 +53,7 @@ public class tko_14_RejectRequest {
 	}
 	
 	public SelenideElement TextBoxKadasNumber() {
-		return $(By.xpath("//div[@class='v-widget v-has-caption v-caption-on-right']/input")).waitUntil(visible, app.timeOut);
+		return $(By.xpath("//div[@class='v-widget v-has-caption v-caption-on-right v-has-width']/input")).waitUntil(visible, app.timeOut);
 	}
 	
 	public SelenideElement buttonFind() {
@@ -91,7 +91,7 @@ public class tko_14_RejectRequest {
 		return $(By.xpath("//input[@class='v-textfield v-widget v-textfield-error v-textfield-error-error v-textfield-required v-required c-empty-value']")).waitUntil(visible, app.timeOut);
 	}
 	public SelenideElement buttonSend() {
-		return $(By.xpath("//span[text()='Отправить на проверку']/../..")).waitUntil(visible, app.timeOut);
+		return $(By.xpath("//span[text()='OK']/../..")).waitUntil(visible, app.timeOut);
 	}
 	public SelenideElement menuMyRequest() {
 		return $(By.xpath("//div[@class='v-captiontext' and text()='Мои заявки']")).waitUntil(visible, app.timeOut);
@@ -162,7 +162,7 @@ public class tko_14_RejectRequest {
 // Авторизация под администратором
 		login().sendKeys("testadmin");
 		sleep(1000);
-		password().sendKeys("1");
+		password().sendKeys("123");
 		sleep(1000);
 		buttonGo().click();
 		sleep(1500);
@@ -284,7 +284,7 @@ public class tko_14_RejectRequest {
 //Авторизация под администратором 
 		login().sendKeys("testadmin");
 		sleep(1000);
-		password().sendKeys("1");
+		password().sendKeys("123");
 		sleep(1000);
 		buttonGo().click();
 		sleep(1500);

@@ -53,7 +53,7 @@ public class tko_13_ApproveRequest {
 	}
 	
 	public SelenideElement TextBoxKadasNumber() {
-		return $(By.xpath("//div[@class='v-widget v-has-caption v-caption-on-right']/input")).waitUntil(visible, app.timeOut);
+		return $(By.xpath("//div[@class='v-widget v-has-caption v-caption-on-right v-has-width']/input")).waitUntil(visible, app.timeOut);
 	}
 	
 	public SelenideElement buttonFind() {
@@ -91,7 +91,7 @@ public class tko_13_ApproveRequest {
 		return $(By.xpath("//input[@class='v-textfield v-widget v-textfield-error v-textfield-error-error v-textfield-required v-required c-empty-value']")).waitUntil(visible, app.timeOut);
 	}
 	public SelenideElement buttonSend() {
-		return $(By.xpath("//span[text()='Отправить на проверку']/../..")).waitUntil(visible, app.timeOut);
+		return $(By.xpath("//span[text()='OK']/../..")).waitUntil(visible, app.timeOut);
 	}
 	public SelenideElement menuMyRequest() {
 		return $(By.xpath("//div[@class='v-captiontext' and text()='Мои заявки']")).waitUntil(visible, app.timeOut);
@@ -161,12 +161,12 @@ public class tko_13_ApproveRequest {
 
 	public void getKadastrNumber() {
 // Авторизация под администратором
-		login().sendKeys("testadmin");
-		sleep(1000);
-		password().sendKeys("1");
-		sleep(1000);
+		login().sendKeys("d-150788@mail.ru");
+
+		password().sendKeys("123456789");
+
 		buttonGo().click();
-		sleep(1500);
+		sleep(1000);
 //Зайти в "Приложение" 
 		menuApp().click();
 		sleep(1000);
@@ -195,35 +195,35 @@ public class tko_13_ApproveRequest {
 //Авторизоваться под пользователем 
 		exit().click();
 		login().sendKeys("6783");
-		sleep(1000);
+
 		password().sendKeys("6783");
-		sleep(1000);
+
 		buttonGo().click();
-		sleep(1500);
+
 
 //Двойным щелчком мыши заходим в контрагента (Открывается окно "Карточка л/с")
 		agent().doubleClick();
-		sleep(1000);
+
 //Переходим на вкладку "Объекты недвижимости"
 		menuProperty().click();
 		sleep(1000);
 //Кликаем "Добавить" (Появляется форма "Редактор контрагент-объект недвижимости")
 		buttonAdd().click();
-		sleep(1000);
+
 //Разворачиваем окно на весь экран
 		boxMax().click();
-		sleep(1000);
+
 		
 //Указываем кадастровый номер
 		System.out.println(Num);
 		TextBoxKadasNumber().sendKeys(Num);
-		sleep(1000);
+
 //Кликаем "Найти"(Появляются доп. поля)
 		buttonFind().click();
-		sleep(1000);
+
 //Открываем меню “Категория объекта” 
 		menuObject().click();
-		sleep(1000);
+
 //Выбираем “Категория объекта” 
 		Random r = new Random();
 		int Low = 1;
@@ -231,7 +231,7 @@ public class tko_13_ApproveRequest {
 		int Result = r.nextInt(High-Low) + Low;
 		
 		$(By.xpath("(//td[@class='gwt-MenuItem'])["+Result+"]")).click();
-		sleep(1000);
+
 		
 		
 //		infoText().click();
@@ -242,10 +242,10 @@ public class tko_13_ApproveRequest {
 		
 //Открываем меню “Тип владения” 
 		menuPossessions().click();
-		sleep(1000);
+
 //Выбираем “Тип владения” 
 		selectPossessions().click();
-		sleep(1000);
+
 
 	}
 	// Загрузка файла
@@ -258,116 +258,116 @@ public class tko_13_ApproveRequest {
 		return locator;
 
 	}
-	public void loadFile() {
-
-//		boxFile().doubleClick();
-//		sleep(1000);
-//		file();
+//	public void loadFile() {
+//
+////		boxFile().doubleClick();
+////		sleep(1000);
+////		file();
+////		sleep(1500);
+////		saveFile().click();
+////		sleep(1500);
+////		unitsInDocument().sendKeys("10");
+////		sleep(1000);
+//		
+////Кликаем “Отправить на проверку” (Система возвращается в окно "Карточка л/с" )
+//		buttonSend().click();
 //		sleep(1500);
-//		saveFile().click();
+////Переходим на вкладку "Мои заявки" (Отображаются заявки, отправленные на обработку)
+//		menuMyRequest().click();
+//		sleep(3000);
+//		buttonUpdate().click();
 //		sleep(1500);
-//		unitsInDocument().sendKeys("10");
+//		buttonUpdate().click();
+//		sleep(1500);
+//		buttonUpdate().click();
+//		sleep(2500);
+//     }
+//	
+//	public String et() {
+//		String etapText = etap().getText();
+//		System.out.println(etapText);
+////		etap().shouldNotHave(text("Верификация"));
+////		etap().shouldNotHave(text(etapText),text("Верификация"));
+////		etap().shouldNot(text(etapText),text("Верификация"));
+//		return etapText;
+//	}
+//	
+//	public void startAdmin() {
+//		String res=et();
+////Выходим из учетной записи пользователя (Открывается страница авторизации)
+//		exit().click();
+//		sleep(5000);
+////Авторизация под администратором 
+//		login().sendKeys("d-150788@mail.ru");
 //		sleep(1000);
-		
-//Кликаем “Отправить на проверку” (Система возвращается в окно "Карточка л/с" )
-		buttonSend().click();
-		sleep(1500);
-//Переходим на вкладку "Мои заявки" (Отображаются заявки, отправленные на обработку)
-		menuMyRequest().click();
-		sleep(3000);
-		buttonUpdate().click();
-		sleep(1500);
-		buttonUpdate().click();
-		sleep(1500);
-		buttonUpdate().click();
-		sleep(2500);
-     }
-	
-	public String et() {
-		String etapText = etap().getText();
-		System.out.println(etapText);
-//		etap().shouldNotHave(text("Верификация"));
-//		etap().shouldNotHave(text(etapText),text("Верификация"));
-//		etap().shouldNot(text(etapText),text("Верификация"));
-		return etapText;
-	}
-	
-	public void startAdmin() {
-		String res=et();
-//Выходим из учетной записи пользователя (Открывается страница авторизации)
-		exit().click();
-		sleep(5000);
-//Авторизация под администратором 
-		login().sendKeys("testadmin");
-		sleep(1000);
-		password().sendKeys("1");
-		sleep(1000);
-		buttonGo().click();
-		sleep(1500);
-//Перейти на вкладку "заявки на изменение"
-		requestСhange().click();
-		sleep(10000);
-//Кликаем раздел того этапа, система которого присвоила заявке ранее (Открываются заявки на изменение)
-		
-		System.out.println("2 ="+res);
-		
-		$(By.xpath("//div[text()='"+res+"']")).click();
-		
-		
-		
-		sleep(8000);
-//Кликаем по заявке два раза (Открывается окно заявка на изменение)
-		selectRequest().doubleClick();
-		sleep(5000);
-//Кликаем “Согласовать” (Всплывает окно "комментарий")
-		buttonApprove().click();
-		sleep(3000);
-//Вписываем комментарий (Согласованно)
-		textBoxComment().sendKeys("Согласованно");
-		sleep(3000);
-		textBoxComment().sendKeys(Keys.TAB);
-		sleep(1000);
-//Кликаем “Ок” (Открыто окно “Заявка на изменение”)
-		buttonOkComment().sendKeys(Keys.ENTER);
-		sleep(1000);
-//Кликаем “Ок” (Открывается окно “Заявки на изменение”)
-		buttonOkRequest().doubleClick();
-		sleep(10000);
-//Перейти в раздел "Принято"
-		menuAccepted().click();
-		sleep(8000);
-//Двойным щелчком открываем заявку 
-		choiceRuquest().doubleClick();
-		sleep(5000);
-//Выходим из учетной записи администратора (Открывается страница авторизации)
-		exit().click();
-		sleep(5000);
-	}
-	public void startUser2() {
-//Авторизоваться под пользователем
-		login().sendKeys("6783");
-		sleep(1000);
-		password().sendKeys("6783");
-		sleep(1000);
-		buttonGo().click();
-		sleep(1500);
-//Двойным щелчком мыши заходим в контрагента (Открывается окно "Карточка л/с")
-		agent().doubleClick();
-		sleep(1000);
-//Переходим на вкладку "Мои заявки" (Отображаются заявки)
-		menuMyRequest().click();
-//Кликаем на заявку
-//		MyRequest().click();
-		sleep(6000);
+//		password().sendKeys("123456789");
+//		sleep(1000);
+//		buttonGo().click();
+//		sleep(1500);
+////Перейти на вкладку "заявки на изменение"
+//		requestСhange().click();
+//		sleep(10000);
+////Кликаем раздел того этапа, система которого присвоила заявке ранее (Открываются заявки на изменение)
+//		
+//		System.out.println("2 ="+res);
+//		
+//		$(By.xpath("//div[text()='"+res+"']")).click();
+//		
+//		
+//		
+//		sleep(8000);
+////Кликаем по заявке два раза (Открывается окно заявка на изменение)
+//		selectRequest().doubleClick();
+//		sleep(5000);
+////Кликаем “Согласовать” (Всплывает окно "комментарий")
+//		buttonApprove().click();
+//		sleep(3000);
+////Вписываем комментарий (Согласованно)
+//		textBoxComment().sendKeys("Согласованно");
+//		sleep(3000);
+//		textBoxComment().sendKeys(Keys.TAB);
+//		sleep(1000);
+////Кликаем “Ок” (Открыто окно “Заявка на изменение”)
+//		buttonOkComment().sendKeys(Keys.ENTER);
+//		sleep(1000);
+////Кликаем “Ок” (Открывается окно “Заявки на изменение”)
+//		buttonOkRequest().doubleClick();
+//		sleep(10000);
+////Перейти в раздел "Принято"
+//		menuAccepted().click();
+//		sleep(8000);
+////Двойным щелчком открываем заявку 
+//		choiceRuquest().doubleClick();
+//		sleep(5000);
+////Выходим из учетной записи администратора (Открывается страница авторизации)
+//		exit().click();
+//		sleep(5000);
+//	}
+//	public void startUser2() {
+////Авторизоваться под пользователем
+//		login().sendKeys("6783");
+//		sleep(1000);
+//		password().sendKeys("6783");
+//		sleep(1000);
+//		buttonGo().click();
+//		sleep(1500);
+////Двойным щелчком мыши заходим в контрагента (Открывается окно "Карточка л/с")
+//		agent().doubleClick();
+//		sleep(1000);
+////Переходим на вкладку "Мои заявки" (Отображаются заявки)
+//		menuMyRequest().click();
+////Кликаем на заявку
+////		MyRequest().click();
+//		sleep(6000);
 
-	}
+//	}
 	public void ApproveRequest() {
 		app.tko_13().getKadastrNumber();
 		app.tko_13().KadasN();
 		app.tko_13().startUser();
-		app.tko_13().loadFile();
-		app.tko_13().startAdmin();
-		app.tko_13().startUser2();
+//		app.tko_13().loadFile();
+//		app.tko_13().startAdmin();
+//		app.tko_13().startUser2();
 		
 		
 

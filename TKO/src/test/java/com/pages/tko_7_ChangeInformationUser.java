@@ -55,7 +55,7 @@ public class tko_7_ChangeInformationUser {
 	}
 
 	public SelenideElement buttonSend() {
-		return $(By.xpath("//span[text()='Отправить на проверку']/../..")).waitUntil(visible, app.timeOut);
+		return $(By.xpath("//span[text()='OK']/../..")).waitUntil(visible, app.timeOut);
 	}
 	public SelenideElement menuMyRequest() {
 		return $(By.xpath("//div[@class='v-captiontext' and text()='Мои заявки']")).waitUntil(visible, app.timeOut);
@@ -113,36 +113,35 @@ public class tko_7_ChangeInformationUser {
 
 		//Авторизоваться под пользователем
 				login().sendKeys("6783");
-				sleep(1000);
+				
 				password().sendKeys("6783");
-				sleep(1000);
+				
 				buttonGo().click();
-				sleep(1500);
-
+				
 			}
 			public void selectAgent() {
 
 		//Двойным щелчком мыши заходим в контрагента (Открывается окно "Карточка л/с")
 				agent().doubleClick();
-				sleep(1000);
+				
 		//Переходим на вкладку "Объекты недвижимости"
 				menuProperty().click();
-				sleep(1000);
+				
 		//Выбираем объект недвижимости, который ранее был согласован (Фон заявки окрашен, в белый цвет)
 				selectProperty().click();
-				sleep(1000);
+				
 		//Кликаем “Изменить сведения” (Всплывает окно "редактор контрагент-объект недвижимости")
 				buttonChange().click();
-				sleep(1000);
+				
 			}
 
 			public void editAgent() {
 		//Открываем меню объект недвижимости
 				menuObject().click();
-				sleep(1000);
+				
 		//Выбираем объект недвижимости
 				selectObject().click();
-				sleep(1000);
+				
 
 
 			}
@@ -151,12 +150,12 @@ public class tko_7_ChangeInformationUser {
 
 				//Кликаем “Отправить на проверку” (Всплывает информация: Запись была отправлена на обработку)
 						buttonSend().click();
-						sleep(1500);
+						
 				//Переходим на вкладку "Мои заявки" (Отображаются заявки, отправленные на обработку)
 						menuMyRequest().click();
 				//Выбираем заявку, отправленную на обработку
 						MyRequest().click();
-						sleep(6000);
+						sleep(2000);
 
 				     }
 

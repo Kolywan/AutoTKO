@@ -54,6 +54,9 @@ public class tko_3_CreateUser {
 	public SelenideElement textBoxConfirmPassword() {
 		return $(By.xpath("//div[text()='Confirm New Password']/../../input")).waitUntil(visible, app.timeOut);
 	}
+		public SelenideElement textBoxEmail() {
+		return $(By.xpath("//div[text()='Email']/../../input")).waitUntil(visible, app.timeOut);
+	}
 	public SelenideElement buttonOk() {
 		return $(By.xpath("//div[@class='v-button v-widget icon v-button-icon c-primary-action v-button-c-primary-action']")).waitUntil(visible, app.timeOut);
 	}
@@ -61,10 +64,8 @@ public class tko_3_CreateUser {
 	
 	public void start() {
 // Авторизация под администратором
-		login().sendKeys("testadmin");
-		sleep(1000);
-		password().sendKeys("1");
-		sleep(1000);
+		login().sendKeys("d-150788@mail.ru");
+		password().sendKeys("123456789");
 		buttonGo().click();
 		sleep(1500);
 
@@ -79,19 +80,20 @@ public class tko_3_CreateUser {
 		sleep(1000);
 //Выбрать "Контрагенты" 
 		buttonCreate().click();
-		sleep(3000);
+		sleep(1000);
 //Заполняем поле “Наименование”
-		textBoxLogin().sendKeys("6783");
-		sleep(1000);
+		textBoxLogin().sendKeys("67831");
+		
 //Заполняем поле “Юридический адрес”
-		textBoxPassword().sendKeys("6783");
-		sleep(1000);
+		textBoxPassword().sendKeys("67831");
+		
 //Заполняем поле “ИНН”
-		textBoxConfirmPassword().sendKeys("6783");
-		sleep(1000);
+		textBoxConfirmPassword().sendKeys("67831");
+		
+		textBoxEmail().sendKeys("d-150788@mail.ru");
 //Нажимаем кнопку "OK"
 		buttonOk().click();
-		sleep(3000);
+		sleep(1000);
 	}
 	
 	public void CreateUser() {
